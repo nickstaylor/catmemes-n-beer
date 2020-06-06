@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
 import { Redirect } from 'react-router-dom'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 
 class Login extends Component {
@@ -64,6 +64,7 @@ class Login extends Component {
                 value={this.state.zipCode}
                 onChange={this.handleChange}
               />
+              <label  className="zipcode" htmlFor="zipCode">(Zip Code? For Beer! You'll See) </label>
             </div>
             <button className="login-btn">MEOW!</button>
           </form>

@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-}
-.App img {
-  height: 500px;
-  width: 500px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }

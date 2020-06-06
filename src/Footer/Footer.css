@@ -1,0 +1,47 @@
+.thumbs-up {
+height: 40px;
+width: 40px;
+margin-right: 5px;
+margin-bottom: 5px;
+padding-left: 5px;
+}
+
+.random-cat-fat-footer-image {
+  height: 50px;
+  width: 70px;
+  border-radius: 7px;
+  padding-right: 5px;
+}
+
+.thumbs-up:hover{
+  cursor: pointer
+}
+
+.footer-container {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7F9EEF;
+
+}
+
+.footer-votes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .3em;
+}
+
+.votes {
+  position: relative;
+  color: white;
+  font-weight: bolder;
+  right: 29px;
+
+}
