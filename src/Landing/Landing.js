@@ -1,28 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Landing.css'
 import {} from 'react-router-dom'
-import PropTypes from 'prop-types'
+import Topic from '../Topic/Topic'
+// import PropTypes from 'prop-types'
 
+const Landing = (props)=>{
+console.log(props);
 
-
-class Landing extends Component {
-constructor(props){
-  super(props)
-  this.state = {}
-}
-
-
-render(){
+let displayTopics = props.topics.map(topic=>{
+  return <Topic  key={topic.name} topic={topic} />
+})
   return (
-    <div>
-    <h1>Cat Memes</h1>
-    <img src={this.props.randomImage} alt="homepage cat" />
-    <p>{this.props.randomFact}</p>
+    <div className="landing-container-locations ">
+    {displayTopics}
     </div>
   )
 }
 
-
-}
 
 export default Landing
