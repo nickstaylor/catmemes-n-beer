@@ -13,19 +13,16 @@ class Brewery extends Component {
     isFavorited: this.props.brewery.favorite,
     starFilled: starFilled,
     starOutline: starOutline,
-    starImage: this.props.favorite ? "starFilled" : "starOutline",
+    starImage: this.props.brewery.favorite ? "starFilled" : "starOutline",
     }
   }
 
   addDefaultSrc = (event) => {
     event.target.src = brewery
   }
+
   favoriteThisListing = (event) => {
   let id = event.target.id;
-  const favoritedListing = {
-    ...this.props.data,
-    image: this.props.imageA,
-  };
 
   let imageName;
   this.state.isFavorited
@@ -35,14 +32,15 @@ class Brewery extends Component {
     isFavorited: !this.state.isFavorited,
     starImage: imageName,
   });
-  let fromFavorites = false;
-  if (this.props.comingFromFavorites) {
-    fromFavorites = true;
-  }
-  this.props.favoriteListing(favoritedListing, fromFavorites);
-  if (fromFavorites) {
-    this.props.updateFavoriteState(id);
-  }
+    let fromFavorites = false;
+    if (this.props.comingFromFavorites) {
+      fromFavorites = true;
+    }
+    this.props.toggleFavoriteBrewery(id);
+
+    if (fromFavorites) {
+      this.props.updateFavoriteState(id);
+    }
 };
 
 
