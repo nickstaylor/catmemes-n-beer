@@ -12,6 +12,10 @@ import Favorites from '../Favorites/Favorites'
 import BreweryContainer from '../BreweryContainer/BreweryContainer'
 import BreweryDetails from '../BreweryDetails/BreweryDetails'
 import DadJoke from '../DadJoke/DadJoke'
+import FavoriteCatMemes from '../FavoriteCatMemes/FavoriteCatMemes'
+import FavoriteDadJokes from '../FavoriteDadJokes/FavoriteDadJokes'
+import FavoriteBored from '../FavoriteBored/FavoriteBored'
+import FavoriteBreweries from '../FavoriteBreweries/FavoriteBreweries'
 import dadJokeImg from '../../images/DadJokes.jpg'
 import boredKids from '../../images/BoredKids.jpg'
 import catMeme from '../../images/catMeme.jpeg'
@@ -27,7 +31,8 @@ class App extends Component {
       favoriteCatMemes: [],
       favoriteDadJokes: [],
       favoriteBreweries: [],
-      favoriteBoredActivity: [],
+      favoriteBreweryIDs: [],
+      favoriteBoredActivities: [],
       breweries: [],
       randomFact: '',
       user: '',
@@ -52,43 +57,23 @@ class App extends Component {
                   randomFact: newFacts[0]})
   }
 
-  addUser = (user) => {
-    this.setState ({ user: user.user,
-                     zipCode: user.zipCode})
-    this.getCoordinatesFromZip(+user.zipCode)
-  }
-
-
-  favoriteCatMeme = (object) => {
-      this.setState({favoriteCatMemes: [...this.state.favoriteCatMemes, object]})
-  }
-
-  favoriteDadJoke = (object) => {
-      this.setState({favoriteDadJokes: [...this.state.favoriteDadJokes, object]})
-  }
-
-  favoriteBoredActivity = (activity) => {
-    this.setState({favoriteBoredActivity: [...this.state.favoriteBoredActivity, activity]})
-  }
-
   getCoordinatesFromZip = async (zipCode) => {
     console.log(zipCode);
     //zipCode fetch
     let fetchedZipCode = await getCoordinates(zipCode)
     if (fetchedZipCode.length){
       this.setState({coordinates: fetchedZipCode[0].geometry.location})
-      // this.getSpots()
-      } else {
-        this.setState({zipCodeError: true})
-      }
-      this.getBrewerySpots()
-      console.log('zipCodeFetch', fetchedZipCode);
+    } else {
+      this.setState({zipCodeError: true})
     }
+    this.getBrewerySpots()
+    console.log('zipCodeFetch', fetchedZipCode);
+  }
 
   getBrewerySpots = async () => {
     let breweries
     if(this.state.zipCodeError){
-      console.log('here');
+      console.log('zip error');
       let coordinates = {lat: "39.7541032", lng: "-105.0002242"}
       breweries = await getBreweries(coordinates)
     } else {
@@ -100,9 +85,9 @@ class App extends Component {
     let breweryArray = []
     breweries.results.forEach(brewery => {
       if (brewery.photos === undefined){
-         photo = stockPhoto
+        photo = stockPhoto
       } else {
-          photo = getBreweryPhotos(brewery.photos[0].photo_reference)
+        photo = getBreweryPhotos(brewery.photos[0].photo_reference)
       }
       breweryArray.push(
         {
@@ -122,8 +107,62 @@ class App extends Component {
     this.setState({breweries: breweryArray})
   }
 
+  addUser = (user) => {
+    this.setState ({ user: user.user,
+                     zipCode: user.zipCode})
+    this.getCoordinatesFromZip(+user.zipCode)
+  }
+
   removeUser = () => {
-    this.setState({user: ''})
+    this.setState({user: '',
+                  favoriteCatMemes: [],
+                  favoriteDadJokes: [],
+                  favoriteBreweries: [],
+                  favoriteBoredActivities: []})
+  }
+
+  favoriteCatMeme = (object) => {
+      this.setState({favoriteCatMemes: [...this.state.favoriteCatMemes, object]})
+  }
+
+  favoriteDadJoke = (object) => {
+      this.setState({favoriteDadJokes: [...this.state.favoriteDadJokes, object]})
+  }
+
+  favoriteBoredActivity = (activity) => {
+    this.setState({favoriteBoredActivities: [...this.state.favoriteBoredActivities, activity]})
+  }
+
+  deleteFavorite = (id) => {
+
+  }
+
+  loadFavoriteBreweries = () => {
+    let favorites = this.state.breweries.reduce((acc, brewery) => {
+      this.state.favoriteBreweryIDs.forEach((id) => {
+        if (brewery.id === id) {
+          acc.push(brewery);
+        }
+      });
+    return acc;
+  }, []);
+  this.setState({ favoriteBreweries: favorites });
+  }
+
+  updatefavoriteBreweries = (newFavorites) => {
+    this.setState({favoriteBreweries: newFavorites})
+  }
+
+  toggleFavoriteBrewery = (id) => {
+    if (!this.state.favoriteBreweryIDs.includes(id)){
+      this.setState({favoriteBreweryIDs: [...this.state.favoriteBreweryIDs, id]})
+    } else {
+      let newFavorites = this.state.favoriteBreweryIDs.filter(favorite=>{
+        return favorite !== id
+      })
+      this.setState({favoriteBreweryIDs: newFavorites})
+    }
+    this.loadFavoriteBreweries()
   }
 
   getNewFact = ()=> {
@@ -153,10 +192,11 @@ class App extends Component {
     <div className="App">
     {this.state.user &&
       <Header
-      favoriteBoredActivity={this.state.favoriteBoredActivity.length}
+      loadFavorites={this.loadFavorites}
+      favoriteBoredActivity={this.state.favoriteBoredActivities.length}
       favoriteDadJokes={this.state.favoriteDadJokes.length}
       favoriteCatMemes={this.state.favoriteCatMemes.length}
-      favoriteBreweries={this.state.favoriteBreweries.length}
+      favoriteBreweries={this.state.favoriteBreweryIDs.length}
       user={this.state.user}
       removeUser={this.removeUser}
       />}
@@ -177,15 +217,23 @@ class App extends Component {
       <CatMemes favoriteCatMeme={this.favoriteCatMeme} />}
     />
 
-    <Route path="/favorites" exact render={() => <Favorites />}
+    <Route path="/favorites" exact render={() =>
+      <Favorites
+      topics={this.state.topics}
+      loadFavoriteBreweries={this.loadFavoriteBreweries}
+      favoriteBoredActivity={this.state.favoriteBoredActivities.length}
+      favoriteDadJokes={this.state.favoriteDadJokes.length}
+      favoriteCatMemes={this.state.favoriteCatMemes.length}
+      favoriteBreweries={this.state.favoriteBreweryIDs.length} />}
     />
 
     <Route path="/breweries" exact render={() =>
       <BreweryContainer
+      favoriteBreweryIDs={this.state.favoriteBreweryIDs}
       breweries={this.state.breweries}
       zipCodeError={this.state.zipCodeError}
       zipCode={this.state.zipCode}
-      toggleFavorite={this.toggleFavorite}
+      toggleFavoriteBrewery={this.toggleFavoriteBrewery}
       />}
     />
 
@@ -198,6 +246,31 @@ class App extends Component {
 
     <Route path ="/dadjokes" exact render={() =>
       <DadJoke favoriteDadJoke={this.favoriteDadJoke} />}
+    />
+
+    <Route path ="/favorites/catmemes" exact render={() =>
+      <FavoriteCatMemes
+        favoriteCatMemes={this.state.favoriteCatMemes}
+        deleteFavorite={this.deleteFavorite}/>}
+    />
+
+    <Route path ="/favorites/dadjokes" exact render={() =>
+       <FavoriteDadJokes
+        favoriteDadJokes={this.state.favoriteDadJokes}
+        deleteFavorite={this.deleteFavorite}/>}
+    />
+
+    <Route path ="/favorites/boredactivities" exact render={() =>
+       <FavoriteBored
+       favoriteBoredActivities={this.state.favoriteBoredActivities}
+       deleteFavorite={this.deleteFavorite} />}
+    />
+
+    <Route path ="/favorites/breweries" exact render={() =>
+       <FavoriteBreweries
+       toggleFavoriteBrewery={this.toggleFavoriteBrewery}
+       favoriteBreweries={this.state.favoriteBreweries}
+       updatefavoriteBreweries={this.updatefavoriteBreweries}/>}
     />
 
     </Switch>
