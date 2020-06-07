@@ -12,14 +12,19 @@ const BreweryContainer  = (props) => {
       zipCode = props.zipCode
     }
     console.log(props);
-    const breweries = props.breweries.map(brewery =>
-      <Brewery
+    const breweries = props.breweries.map(brewery => {
+      props.favoriteBreweryIDs.forEach(id=>{
+        if (brewery.id === id){
+          brewery.favorite = true
+        }
+      })
+      return <Brewery
         brewery={brewery}
         id={brewery.id}
         key={brewery.id}
-        toggleFavorite={props.toggleFavorite}
+        toggleFavoriteBrewery={props.toggleFavoriteBrewery}
       />
-    )
+    })
 
     return (
         <div>
