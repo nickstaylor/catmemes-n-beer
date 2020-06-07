@@ -4,11 +4,20 @@ import "./Header.css";
 // import PropTypes from "prop-types";
 
 const Header = (props) => {
-  const favorites = props.favoritesCatMemes + props.favoriteBreweries
-  console.log(props);
+  let favorites = 0
+  let boredActivities = props.favoriteBoredActivity
+  let dadJokes = props.favoriteDadJokes
+  let catMemes = props.favoriteCatMemes
+  let breweries = props.favoriteBreweries
+  let sum = favorites + catMemes + breweries + dadJokes + boredActivities
+  // console.log(props);
+  // console.log('sum', sum);
   return (
     <header>
-    <h2 className="logo">The Thirsty Cat Dad's Escape. Meow <span>{props.user}</span>!</h2>
+    <div className="logo">
+    <p>The Thirsty Cat Dad's Escape.</p>
+    <p className="header-username"> Meow <span>{props.user}</span>!</p>
+    </div>
       <nav className="nav-container">
         <NavLink to="/landing" className="nav">
           {" "}
@@ -18,9 +27,9 @@ const Header = (props) => {
         {
         <NavLink to="/favorites" className="nav" onClick={props.loadFavorites}>
           Favorites (
-          {!favorites
+          {!sum
             ? "0"
-            : `${favorites}`}
+            : `${sum}`}
           ){" "}
         </NavLink>
       }
@@ -33,7 +42,7 @@ const Header = (props) => {
   );
 };
 
-// Nav.propTypes = {
+// Header.propTypes = {
 //   removeUser: PropTypes.func,
 //   numberofFavorites: PropTypes.array,
 //   loadFavorites: PropTypes.func,

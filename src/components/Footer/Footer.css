@@ -16,6 +16,9 @@ padding-left: 5px;
 .thumbs-up:hover{
   cursor: pointer
 }
+.random-fact{
+  color: whitesmoke;
+}
 
 .footer-container {
   overflow: hidden;
@@ -28,9 +31,22 @@ padding-left: 5px;
   justify-content: center;
   align-items: center;
   background-color: #7F9EEF;
-
 }
 
+.footer-container button {
+    margin-top: -15px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: 2px;
+    align-self: center;
+    cursor: pointer;
+    border: 2px solid #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: .8;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+    color: #333333;
+}
 .footer-votes {
   display: flex;
   justify-content: center;
@@ -43,5 +59,4 @@ padding-left: 5px;
   color: white;
   font-weight: bolder;
   right: 29px;
-
 }

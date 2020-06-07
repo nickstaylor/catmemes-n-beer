@@ -38,7 +38,7 @@ class Login extends Component {
     return (
       <section className="login-form-background">
         <div className="login-content">
-            <h1 className="main-title">A Little Getaway for Kitty-Loving Dads</h1>
+            <h1 className="main-title">A Little Getaway for Kitty-Loving Cheesy Beer Dads</h1>
           <form className="login-form" onSubmit = {(e)=> this.validateUser(e)}>
             {
               this.state.loginError

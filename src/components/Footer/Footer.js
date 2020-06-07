@@ -1,12 +1,12 @@
 import React from "react";
 import "./Footer.css";
 import PropTypes from "prop-types";
-import thumbsUp from "../images/thumbUp.png"
-import randomCatFact from "../images/randomCatFact.png"
+import thumbsUp from "../../images/thumbUp.png"
+import randomCatFact from "../../images/randomCatFact.png"
 
 const Footer = (props) => {
     const {randomFact} = props
-    console.log(randomFact);
+    // console.log(randomFact);
   return (
     <footer className="footer-container">
     <img
@@ -14,7 +14,7 @@ const Footer = (props) => {
     src={randomCatFact}
     alt="random cat facts"
     />
-    <p>{randomFact.text}</p>
+    <p className="random-fact">{randomFact.text}</p>
     <div className="footer-votes">
     <img
         id={randomFact.id}

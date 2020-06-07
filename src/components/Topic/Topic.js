@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 const Topic = (props) => {
-console.log(props)
+// console.log(props)
 const { topic } = props
   return (
     <div className="area-box">
