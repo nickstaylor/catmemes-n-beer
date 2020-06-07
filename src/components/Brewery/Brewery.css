@@ -33,6 +33,7 @@
 
   .favorite-star {
     background-color: transparent;
+    outline: none;
     border: none;
     cursor: pointer;
     height: 30px;
