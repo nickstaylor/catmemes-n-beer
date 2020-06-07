@@ -1,0 +1,62 @@
+.thumbs-up {
+height: 40px;
+width: 40px;
+margin-right: 5px;
+margin-bottom: 5px;
+padding-left: 5px;
+}
+
+.random-cat-fat-footer-image {
+  height: 50px;
+  width: 70px;
+  border-radius: 7px;
+  padding-right: 5px;
+}
+
+.thumbs-up:hover{
+  cursor: pointer
+}
+.random-fact{
+  color: whitesmoke;
+}
+
+.footer-container {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7F9EEF;
+}
+
+.footer-container button {
+    margin-top: -15px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: 2px;
+    align-self: center;
+    cursor: pointer;
+    border: 2px solid #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: .8;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+    color: #333333;
+}
+.footer-votes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .3em;
+}
+
+.votes {
+  position: relative;
+  color: white;
+  font-weight: bolder;
+  right: 29px;
+}
