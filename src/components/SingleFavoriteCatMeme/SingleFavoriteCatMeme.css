@@ -1,0 +1,79 @@
+
+.single-fav-cat-meme-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 80%;
+}
+
+.meme-container-fav {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 3px solid white;
+    background-color: #7F9EEF;
+    border-radius: 4px;
+    box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    margin: 15px;
+    width: 300px;
+}
+
+
+.single-fav-cat-meme-container img {
+    margin-top: 150px;
+    margin-left: 5px;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+}
+
+.single-fav-cat-meme-container h2 {
+    position: relative;
+    width: 80%;
+    text-align: center;
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom-fav {
+    bottom: 100px;
+    right: -15px;
+}
+
+.top-fav {
+    top: -260px;
+    right: -15px;
+}
+
+
+.fav-meme-btn {
+    padding: 5px 20px;
+    border-radius: 5px;
+    align-self: center;
+    cursor: pointer;
+    border: 2px solid #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: .8;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+    color: #333333;
+}
