@@ -12,7 +12,7 @@ const { topic } = props
     <img className="area-image" src={topic.photo} alt={topic.name} />
     <p>{topic.name}</p>
     <Link to={`/${topic.topic}`}>
-    <button className="topic-button">Go!</button>
+    <button data-testid={topic.name} className="topic-button">Go!</button>
     </Link>
     </div>
   )
