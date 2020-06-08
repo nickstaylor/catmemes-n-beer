@@ -1,6 +1,6 @@
 import React from 'react'
 import './IndBoredAdvice.css'
-import { Link } from 'react-router-dom'
+
 // import PropTypes from 'prop-types'
 
 const IndBoredAdvice = (props)=> {
@@ -12,7 +12,7 @@ return (
       <button
        id={props.id}
        className="topic-button"
-       onClick={() => props.deleteFavorite(props.id)}>Delete</button>
+       onClick={() => props.deleteFavorite(props.id, props.name)}>Delete</button>
     </div>
   )
 
