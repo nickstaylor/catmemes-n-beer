@@ -82,7 +82,7 @@ export const getBreweries = async (coordinates) => {
   try {
     const result = await fetch('https://fe-cors-proxy.herokuapp.com', {
       headers: {
-        "Target-URL": `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=brewery&location=${latitude},${longitude}&radius=10000&type=point_of_interest&key=${apiKey}`
+        "Target-URL": `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=brewery&location=${latitude},${longitude}&radius=50000&type=point_of_interest&key=${apiKey}`
       }
     })
     if (!result.ok) {
