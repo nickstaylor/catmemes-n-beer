@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import "./Brewery.css";
 import starOutline from "../../images/star-outline.svg";
 import starFilled from "../../images/pinkStar.png";
@@ -73,17 +73,21 @@ class Brewery extends Component {
       alt="brewery"
     />
     <div className="lower-brewery-container">
-      <Link
-        className="open-spot"
-        to={`/spotDetails/${name}`}
-        onClick={() => this.props.displaySpotDetails(id)}
-      >
+    {
+      // <Link
+      //   className="open-spot"
+      //   to={`/spotDetails/${name}`}
+      //   onClick={() => this.props.displaySpotDetails(id)}
+      // >
+    }
         <p className="spot-title">{name}</p>
         <p className="spot-address">{address}</p>
         <div className="stars-container">
           { stars }
         </div>
-      </Link>
+        {
+      // </Link>
+    }
       </div>
     </section>
   )

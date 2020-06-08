@@ -12,11 +12,13 @@ const FavoriteDadJokes = (props)=> {
         data={joke}
         id={joke.id}
         key={joke.id}
+        name={props.name}
         deleteFavorite={props.deleteFavorite}
       />
     )
   })
 return (
+  !props.favoriteDadJokes.length ? <div>No favorites yet! Check out some awesome <Link to="/dadjokes">Dad Jokes!</Link></div> :
     <div className ="favorites-container">
     {favorites}
     </div>

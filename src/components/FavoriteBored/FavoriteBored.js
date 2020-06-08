@@ -12,11 +12,13 @@ const FavoriteBored = (props)=> {
         activity={activity.activity}
         id={activity.id}
         key={activity.id}
+        name={props.name}
         deleteFavorite={props.deleteFavorite}
       />
     )
   })
 return (
+  !props.favoriteBoredActivities.length ? <div>No favorites yet! Check out some <Link to="/bored">Bored Kids</Link> ideas!</div> :
     <div className ="favorites-container">
     {favorites}
     </div>

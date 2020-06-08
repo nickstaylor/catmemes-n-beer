@@ -133,8 +133,11 @@ class App extends Component {
     this.setState({favoriteBoredActivities: [...this.state.favoriteBoredActivities, activity]})
   }
 
-  deleteFavorite = (id) => {
-
+  deleteFavorite = (id, name) => {
+    let filtered = this.state[name].filter(favorite=>{
+      return favorite.id !== id
+    })
+    this.setState({[name]: filtered})
   }
 
   loadFavoriteBreweries = () => {
@@ -187,7 +190,6 @@ class App extends Component {
 
 
   render(){
-    console.log(this.state.zipCodeError)
   return (
     <div className="App">
     {this.state.user &&
@@ -241,7 +243,7 @@ class App extends Component {
     />
 
     <Route path ="/bored" exact render={() =>
-       <Bored favoriteBoredActivity={this.favoriteBoredActivity} />}
+      <Bored favoriteBoredActivity={this.favoriteBoredActivity} />}
     />
 
     <Route path ="/dadjokes" exact render={() =>
@@ -250,18 +252,21 @@ class App extends Component {
 
     <Route path ="/favorites/catmemes" exact render={() =>
       <FavoriteCatMemes
+        name={'favoriteCatMemes'}
         favoriteCatMemes={this.state.favoriteCatMemes}
         deleteFavorite={this.deleteFavorite}/>}
     />
 
     <Route path ="/favorites/dadjokes" exact render={() =>
        <FavoriteDadJokes
+        name={'favoriteDadJokes'}
         favoriteDadJokes={this.state.favoriteDadJokes}
         deleteFavorite={this.deleteFavorite}/>}
     />
 
     <Route path ="/favorites/boredactivities" exact render={() =>
        <FavoriteBored
+       name={'favoriteBoredActivities'}
        favoriteBoredActivities={this.state.favoriteBoredActivities}
        deleteFavorite={this.deleteFavorite} />}
     />
