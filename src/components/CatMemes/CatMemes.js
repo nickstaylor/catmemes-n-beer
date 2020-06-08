@@ -69,8 +69,9 @@ class CatMemes extends Component {
 
 
   render(){
-    console.log('newCatMeme', this.state.newCatMeme)
+
     return (
+      this.state.loading ? <div>Cat Images Loading. One Second Please. Meow</div> :
       <div className="meme-container">
       <h2>Make your own Cat Meme!</h2>
       {this.state.newCatMeme &&

@@ -9,6 +9,7 @@ class DadJoke extends Component {
 constructor(props){
   super(props)
   this.state = {
+    loading: false,
     setup: '',
     punchline: '',
     getAnswer: false,
@@ -21,12 +22,14 @@ componentDidMount = () =>{
 }
 
 getNewJoke = async () => {
+  this.setState({loading: true})
   let randomDadjoke = await dadJoke()
-  console.log('randomDadjoke', randomDadjoke);
+  console.log('randomDadjokeAPI', randomDadjoke);
   this.setState({setup: randomDadjoke.setup,
                 punchline: randomDadjoke.punchline,
                 getAnswer: false,
-                jokeSaved: false})
+                jokeSaved: false,
+                loading: false})
 }
 
 getAnswer = () => {
@@ -52,7 +55,8 @@ render(){
       </div>
     }
       <div className="dad-joke-container">
-      <p>{this.state.setup}</p>
+      {this.state.loading ? <p>Dad Joke Loading!</p> :
+      <p>{this.state.setup}</p>}
       {this.state.getAnswer &&
       <p>{this.state.punchline}</p>
       }

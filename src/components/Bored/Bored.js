@@ -10,6 +10,7 @@ class Bored extends Component {
   constructor(props){
     super(props)
   this.state = {
+    loading: false,
     activity: '',
     getNewActivity: false,
     activitySaved: false
@@ -21,10 +22,12 @@ componentDidMount = () =>{
 }
 
 getBoredIdea = async () => {
+  this.setState({loading: true})
   let randomIdea = await boredIdea()
-  console.log('randomIdea', randomIdea);
+  console.log('boredAPI', randomIdea);
   this.setState({activity: randomIdea,
-                activitySaved: false})
+                activitySaved: false,
+                loading: false})
 }
 
 saveActivity = () => {
@@ -46,7 +49,8 @@ render(){
       </div>
     }
       <div className="bored-container">
-      <p>{this.state.activity}</p>
+      {this.state.loading ? <p>Bored Activity Loading!</p> :
+      <p>{this.state.activity}</p>}
       <div className="bored-buttons">
         <div>
         <button onClick={this.getBoredIdea}>New Activity</button>
