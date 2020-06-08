@@ -27,7 +27,6 @@ class CatMemes extends Component {
     let images = catImagesApi.map(image => image.url)
     this.setState({ catImages: images,
                     loading: false})
-    console.log('CatMemesState', this.state);
     }
 
     handleChange = (event)=>{
@@ -71,8 +70,8 @@ class CatMemes extends Component {
   render(){
 
     return (
-      this.state.loading ? <div>Cat Images Loading. One Second Please. Meow</div> :
       <div className="meme-container">
+      {this.state.loading && <h2>Cat Images Loading. One Second Please. Meow</h2>}
       <h2>Make your own Cat Meme!</h2>
       {this.state.newCatMeme &&
         <div className="meme-buttons">
