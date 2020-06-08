@@ -12,7 +12,7 @@ export const catFacts = async () => {
     throw new Error(`Problem received status code of ${response.status}`)
   }
   const data = await response.json()
-  return data
+  return data.all
   } catch (error){
     window.alert(`Server Error. It's not your fault the error is: ${error}`)
   }
