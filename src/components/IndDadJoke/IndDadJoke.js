@@ -11,6 +11,7 @@ return (
     <p>{props.data.punchline}</p>
       <button
        id={props.id}
+       data-testid={props.id}
        className="topic-button"
        onClick={() => props.deleteFavorite(props.id, props.name)}>Delete</button>
     </div>
