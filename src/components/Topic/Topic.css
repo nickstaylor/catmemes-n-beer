@@ -1,21 +1,5 @@
-.topic-wrapper {
-
-    background-color: white;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 7px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-    /* .spot-img-wrapper {
-      position: relative;
-
-    } */
-  }
 .area-box {
   align-items: center;
-  /* background-color: #214EA3; */
-
   background-color: #7F9EEF;
   border-radius: 10px;
   border: 6px solid #214EA3;
@@ -26,6 +10,8 @@
   height: 250px;
   justify-content: space-evenly;
   margin: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   width: 25%;
 }
 

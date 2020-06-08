@@ -12,12 +12,14 @@ const FavoriteCatMemes = (props)=> {
         data={meme}
         id={meme.id}
         key={meme.id}
+        name={props.name}
         deleteFavorite={props.deleteFavorite}
       />
     )
   })
 
 return (
+  !props.favoriteCatMemes.length ? <div>No favorites yet! Create some <Link to="/catmemes">Cat Memes!</Link></div> :
     <div className ="favorites-container">
     {favorites}
     </div>

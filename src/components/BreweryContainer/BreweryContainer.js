@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './BreweryContainer.css'
-import {} from 'react-router-dom'
 import Brewery from '../Brewery/Brewery'
 // import PropTypes from 'prop-types'
 

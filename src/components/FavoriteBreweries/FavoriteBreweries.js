@@ -38,12 +38,12 @@ class FavoriteBreweries extends Component{
     })
 
     return (
+      !this.state.favoriteBreweries.length ? <div>No favorites yet! Check out some <Link to="/breweries">Breweries!</Link></div> :
       <div className ="favorites-container">
         {favorites}
       </div>
-  )
-
-}
+    )
+  }
 
 }
 
