@@ -8,7 +8,7 @@ window.MutationObserver = MutationObserver
 
 
 
-describe("Landing", ()=>{
+describe("Landing", () => {
   it("should render 4 topics on the page", () => {
 
     const topics = [{name: 'Create a Cat Meme!', topic: 'catmemes'},
@@ -35,12 +35,10 @@ describe("Landing", ()=>{
                     <Landing topics={topics} />
                     </BrowserRouter>)
 
-    const { getByText, getAllByRole, getByTestId, debug } = render(router)
+    const { getByText, getAllByRole, getByTestId } = render(router)
 
     const button = getByTestId('Cheesy Dad Jokes!');
     fireEvent.click(button)
-    // const dadPage = await waitFor(() => getByText('Enjoy a Dad Joke! Tell Your Friends!'))
-    // expect(dadPage).toBeInTheDocument();
     expect(window.location.href).toBe("http://localhost/dadjokes");
   })
 })
