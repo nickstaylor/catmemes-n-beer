@@ -85,7 +85,7 @@ class App extends Component {
       console.log('breweriesAPI', breweries);
     let photo
     let breweryArray = []
-    breweries.results.forEach(brewery => {
+    breweries.forEach(brewery => {
       if (brewery.photos === undefined){
         photo = stockPhoto
       } else {
@@ -120,7 +120,8 @@ class App extends Component {
                   favoriteCatMemes: [],
                   favoriteDadJokes: [],
                   favoriteBreweries: [],
-                  favoriteBoredActivities: []})
+                  favoriteBoredActivities: [],
+                  favoriteBreweryIDs: []})
   }
 
   favoriteCatMeme = (object) => {
