@@ -12,9 +12,11 @@ describe("Login", () => {
         <Login />
       </BrowserRouter>
     );
+
     const { getByText, getByPlaceholderText } = render(router);
     expect(getByText("(Zip Code? For Beer! You'll See)")).toBeInTheDocument()
     expect(getByText("MEOW!")).toBeInTheDocument();
+
   });
 
   it("should display an error message if inputs are not completed", () => {
@@ -39,16 +41,13 @@ describe("Login", () => {
         <Login addUser={mockAddUser} />
       </BrowserRouter>
     );
-    //  const user = {
-    //  userName: "Robbie",
-    //  zipCode: "90210",
-    // };
+
     const { getByText, getByPlaceholderText } = render(router);
     fireEvent.change(getByPlaceholderText("name"), {
     target: { value: "Robbie" },
     });
     fireEvent.change(getByPlaceholderText("80202"), {
-    target: { value: "90210" },
+    target: { value: "80202" },
     });
     fireEvent.click(getByText("MEOW!"))
     expect(mockAddUser).toHaveBeenCalled()

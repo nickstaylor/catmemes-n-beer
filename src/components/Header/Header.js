@@ -1,17 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Header = (props) => {
+
   let favorites = 0
   let boredActivities = props.favoriteBoredActivity
   let dadJokes = props.favoriteDadJokes
   let catMemes = props.favoriteCatMemes
   let breweries = props.favoriteBreweries
   let sum = favorites + catMemes + breweries + dadJokes + boredActivities
-  // console.log(props);
-  // console.log('sum', sum);
+
   return (
     <header>
     <div className="logo">
@@ -39,12 +39,17 @@ const Header = (props) => {
         </NavLink>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-// Header.propTypes = {
-//   removeUser: PropTypes.func,
-//   numberofFavorites: PropTypes.array,
-//   loadFavorites: PropTypes.func,
-// };
+
+Header.propTypes = {
+  removeUser: PropTypes.func,
+  favoriteBoredActivity: PropTypes.number,
+  favoriteDadJokes: PropTypes.number,
+  favoriteCatMemes: PropTypes.number,
+  favoriteBreweries: PropTypes.number,
+  user: PropTypes.string,
+  loadFavorites: PropTypes.func,
+};
 export default Header;

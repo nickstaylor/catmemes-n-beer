@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
 import { Redirect } from 'react-router-dom'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 class Login extends Component {
@@ -73,6 +73,11 @@ class Login extends Component {
       </section>
     )
   }
+}
+
+
+Login.propTypes = {
+  addUser: PropTypes.func
 }
 
 export default Login

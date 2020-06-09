@@ -34,7 +34,7 @@ class App extends Component {
       favoriteBreweryIDs: [],
       favoriteBoredActivities: [],
       breweries: [],
-      randomFact: '',
+      randomFact: {},
       user: '',
       zipCode: '',
       coordinates: {},
@@ -49,25 +49,26 @@ class App extends Component {
   componentDidMount = async () => {
     //cat facts fetch
     const catFactsApi = await catFacts();
-    let facts = catFactsApi.all.map(fact => {
+    console.log('catFactsApi', catFactsApi);
+    let facts = catFactsApi.map(fact => {
       return {text: fact.text, upVotes: fact.upvotes, id: fact._id, voted: false}
     })
     let newFacts = facts.filter(fact => fact.id !== '5ece9fa9a0d2ec00178ae28e')
-    this.setState({catFacts: newFacts,
-                  randomFact: newFacts[0]})
+    this.setState({ catFacts: newFacts,
+                    randomFact: newFacts[0] })
   }
 
   getCoordinatesFromZip = async (zipCode) => {
     console.log(zipCode);
     //zipCode fetch
     let fetchedZipCode = await getCoordinates(zipCode)
+    console.log('zipCodeAPI', fetchedZipCode);
     if (fetchedZipCode.length){
       this.setState({coordinates: fetchedZipCode[0].geometry.location})
     } else {
       this.setState({zipCodeError: true})
     }
     this.getBrewerySpots()
-    console.log('zipCodeFetch', fetchedZipCode);
   }
 
   getBrewerySpots = async () => {
@@ -80,10 +81,10 @@ class App extends Component {
       console.log('no zip error');
       breweries = await getBreweries(this.state.coordinates)
     }
-    console.log('breweries', breweries);
+      console.log('breweriesAPI', breweries);
     let photo
     let breweryArray = []
-    breweries.results.forEach(brewery => {
+    breweries.forEach(brewery => {
       if (brewery.photos === undefined){
         photo = stockPhoto
       } else {
@@ -103,22 +104,22 @@ class App extends Component {
         }
       )
     })
-    console.log(breweryArray);
-    this.setState({breweries: breweryArray})
+    this.setState({ breweries: breweryArray })
   }
 
   addUser = (user) => {
     this.setState ({ user: user.user,
-                     zipCode: user.zipCode})
+                     zipCode: user.zipCode })
     this.getCoordinatesFromZip(+user.zipCode)
   }
 
   removeUser = () => {
-    this.setState({user: '',
-                  favoriteCatMemes: [],
-                  favoriteDadJokes: [],
-                  favoriteBreweries: [],
-                  favoriteBoredActivities: []})
+    this.setState({ user: '',
+                   favoriteCatMemes: [],
+                   favoriteDadJokes: [],
+                   favoriteBreweries: [],
+                   favoriteBoredActivities: [],
+                   favoriteBreweryIDs: [] })
   }
 
   favoriteCatMeme = (object) => {
@@ -171,14 +172,11 @@ class App extends Component {
   getNewFact = ()=> {
     let anotherRandomNumber = Math.floor(Math.random() * this.state.catFacts.length);
     let randomFact = this.state.catFacts[anotherRandomNumber]
-    this.setState({
-    randomFact: randomFact,
-    })
+    this.setState({randomFact: randomFact})
   }
 
   randomFactVote = (id) => {
     let upVote = this.state.catFacts.find(fact=>fact.id === id)
-    console.log(upVote);
     if (!this.state.randomFact.voted){
       upVote.upVotes++
       upVote.voted = true

@@ -1,10 +1,8 @@
 import React from 'react'
 import './IndBoredAdvice.css'
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const IndBoredAdvice = (props)=> {
-  console.log('IndBoredAdvice props', props)
 
 return (
   <div className="favorites-box">
@@ -16,8 +14,13 @@ return (
     </div>
   )
 
+}
 
-
+IndBoredAdvice.propTypes = {
+  activity: PropTypes.string,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  deleteFavorite: PropTypes.func
 }
 
 export default IndBoredAdvice

@@ -12,7 +12,7 @@ export const catFacts = async () => {
     throw new Error(`Problem received status code of ${response.status}`)
   }
   const data = await response.json()
-  return data
+  return data.all
   } catch (error){
     window.alert(`Server Error. It's not your fault the error is: ${error}`)
   }
@@ -89,7 +89,7 @@ export const getBreweries = async (coordinates) => {
       throw new Error(`Problem received status code of ${result.status}`)
     }
     const response = await result.json()
-    return response
+    return response.results
   } catch (error) {
     window.alert(`Server Error. It's not your fault the error is: ${error}`)
   }

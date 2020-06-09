@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import './CatMemes.css'
 import { Link } from 'react-router-dom'
 import {catImages} from "../../apiCalls.js"
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 class CatMemes extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       loading: false,
       catImages: [],
@@ -27,7 +26,6 @@ class CatMemes extends Component {
     let images = catImagesApi.map(image => image.url)
     this.setState({ catImages: images,
                     loading: false})
-    console.log('CatMemesState', this.state);
     }
 
     handleChange = (event)=>{
@@ -69,9 +67,10 @@ class CatMemes extends Component {
 
 
   render(){
-    console.log('newCatMeme', this.state.newCatMeme)
+
     return (
       <div className="meme-container">
+      {this.state.loading && <h2>Cat Images Loading. One Second Please. Meow</h2>}
       <h2>Make your own Cat Meme!</h2>
       {this.state.newCatMeme &&
         <div className="meme-buttons">
@@ -111,6 +110,10 @@ class CatMemes extends Component {
       </div>
     )
   }
+}
+
+CatMemes.propTypes = {
+favoriteCatMeme: PropTypes.func
 }
 
 

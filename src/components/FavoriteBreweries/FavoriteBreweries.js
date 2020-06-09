@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import './FavoriteBreweries.css'
 import { Link } from 'react-router-dom'
 import Brewery from '../Brewery/Brewery'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 class FavoriteBreweries extends Component{
   constructor(props){
+    console.log(props);
     super(props)
-    console.log('favoriteBreweries props', props);
     this.state = {
       favoriteBreweries: this.props.favoriteBreweries
     }
@@ -45,6 +45,12 @@ class FavoriteBreweries extends Component{
     )
   }
 
+}
+
+FavoriteBreweries.propTypes = {
+  toggleFavoriteBrewery: PropTypes.func,
+  favoriteBreweries: PropTypes.array,
+  updatefavoriteBreweries: PropTypes.func
 }
 
 export default FavoriteBreweries

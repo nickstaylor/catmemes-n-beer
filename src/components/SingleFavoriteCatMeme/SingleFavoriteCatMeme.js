@@ -1,9 +1,8 @@
 import React from 'react'
 import './SingleFavoriteCatMeme.css'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const SingleFavoriteCatMeme = (props)=> {
-  console.log('SingleFavoriteCatMeme props', props)
 
 return (
   <div className="meme-container-fav">
@@ -20,8 +19,13 @@ return (
     </div>
   )
 
-
-
 }
+
+SingleFavoriteCatMeme.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  deleteFavorite: PropTypes.func,
+  data: PropTypes.object
+};
 
 export default SingleFavoriteCatMeme

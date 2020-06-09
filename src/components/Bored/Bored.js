@@ -2,18 +2,19 @@ import React, { Component } from 'react'
 import './Bored.css'
 import {Link } from 'react-router-dom'
 import { boredIdea } from "../../apiCalls.js"
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 
 class Bored extends Component {
   constructor(props){
     super(props)
-  this.state = {
-    activity: '',
-    getNewActivity: false,
-    activitySaved: false
-  }
+    this.state = {
+      loading: false,
+      activity: '',
+      getNewActivity: false,
+      activitySaved: false
+    }
 }
 
 componentDidMount = () =>{
@@ -21,10 +22,12 @@ componentDidMount = () =>{
 }
 
 getBoredIdea = async () => {
+  this.setState({loading: true})
   let randomIdea = await boredIdea()
-  console.log('randomIdea', randomIdea);
+  console.log('boredAPI', randomIdea);
   this.setState({activity: randomIdea,
-                activitySaved: false})
+                activitySaved: false,
+                loading: false})
 }
 
 saveActivity = () => {
@@ -46,7 +49,8 @@ render(){
       </div>
     }
       <div className="bored-container">
-      <p>{this.state.activity}</p>
+      {this.state.loading ? <p>Bored Activity Loading!</p> :
+      <p>{this.state.activity}</p>}
       <div className="bored-buttons">
         <div>
         <button onClick={this.getBoredIdea}>New Activity</button>
@@ -64,7 +68,12 @@ render(){
   )
 }
 
-
 }
+
+
+Bored.propTypes = {
+favoriteBoredActivity: PropTypes.func
+}
+
 
 export default Bored

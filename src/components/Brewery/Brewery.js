@@ -5,6 +5,7 @@ import starOutline from "../../images/star-outline.svg";
 import starFilled from "../../images/pinkStar.png";
 import MdStar from 'react-ionicons/lib/MdStar'
 import brewery from "../../images/Brewery.jpg"
+import PropTypes from 'prop-types'
 
 class Brewery extends Component {
   constructor(props){
@@ -52,12 +53,13 @@ class Brewery extends Component {
       address,
       id
     } = this.props.brewery
-    const stars = [...Array(Math.round(rating))].map(i => <MdStar/>)
+    const stars = [...Array(Math.round(rating))].map(i => <MdStar />)
 
   return (
     <section className="individual-brewery">
     <img
       id={id}
+      data-testid={id}
       src={this.state[this.state.starImage]}
       className="favorite-star"
       alt="favorite"
@@ -92,6 +94,12 @@ class Brewery extends Component {
     </section>
   )
 }
+}
+
+Brewery.propTypes = {
+ brewery: PropTypes.object,
+ id: PropTypes.string,
+ toggleFavoriteBrewery: PropTypes.func
 }
 
 export default Brewery

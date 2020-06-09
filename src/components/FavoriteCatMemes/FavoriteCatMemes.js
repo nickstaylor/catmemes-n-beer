@@ -2,10 +2,10 @@ import React from 'react'
 import './FavoriteCatMemes.css'
 import { Link } from 'react-router-dom'
 import SingleFavoriteCatMeme from '../SingleFavoriteCatMeme/SingleFavoriteCatMeme'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const FavoriteCatMemes = (props)=> {
-  console.log('favoriteCatMeme props', props);
+
   const favorites = props.favoriteCatMemes.map(meme=>{
     return (
       <SingleFavoriteCatMeme
@@ -26,8 +26,13 @@ return (
 
   )
 
-
-
 }
+
+FavoriteCatMemes.propTypes = {
+  name: PropTypes.string,
+  favoriteCatMemes: PropTypes.array,
+  deleteFavorite: PropTypes.func
+}
+
 
 export default FavoriteCatMemes

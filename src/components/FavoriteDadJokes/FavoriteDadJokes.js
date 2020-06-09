@@ -2,10 +2,10 @@ import React from 'react'
 import './FavoriteDadJokes.css'
 import { Link } from 'react-router-dom'
 import IndDadJoke from '../IndDadJoke/IndDadJoke'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const FavoriteDadJokes = (props)=> {
-  console.log('dadjokes', props);
+
   const favorites = props.favoriteDadJokes.map(joke => {
     return (
       <IndDadJoke
@@ -17,6 +17,7 @@ const FavoriteDadJokes = (props)=> {
       />
     )
   })
+
 return (
   !props.favoriteDadJokes.length ? <div>No favorites yet! Check out some awesome <Link to="/dadjokes">Dad Jokes!</Link></div> :
     <div className ="favorites-container">
@@ -25,8 +26,12 @@ return (
 
   )
 
+}
 
-
+FavoriteDadJokes.propTypes = {
+  name: PropTypes.string,
+  favoriteDadJokes: PropTypes.array,
+  deleteFavorite: PropTypes.func
 }
 
 export default FavoriteDadJokes
