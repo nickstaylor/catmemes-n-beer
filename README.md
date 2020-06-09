@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A Little Getaway for Kitty-Loving Cheesy Beer Dads:
+  Final Project for Module 3 of Turing School of Software and Design
 
-## Available Scripts
+## Installation
+ To access this project, simply clone down this repo and run
 
-In the project directory, you can run:
+ ```npm install```
 
-### `npm start`
+ Then run ```npm start``` and open http://localhost:3000/ to see the site!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ To view tests:  In the terminal, run ```npm start``` to view testing suite.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+ Login:
 
-### `npm test`
+ Enter your name and Zip Code.  No password needed
+ (login image here)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ## Functionality
 
-### `npm run build`
+ Exhausted kitty-loving dads can relax by creating cat memes, laughing at random cheesy dad jokes, getting sage advice for those pesky bored kids, or pulling up a list of local breweries.  Dads can save their cat memes, the jokes and advice.  They can also favorite breweries.  The site keeps track of favorites in the favorites page.  Enjoy Dads!
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+(screen shots of App)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ### Technologies Used
 
-### `npm run eject`
+* React
+* React Router
+* React Testing Library
+* Asynchronous Testing
+* Multiple Fetch Calls
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Learning Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Solidify and demonstrate understanding of the following:
+* Using React framework to build complex application
+* Implementing React Router
+* Unit testing for each component
+* Integration Testing spanning multiple components
+* Multiple fetch calls on different components
+* Asynchronous testing and mocking fetch calls
+* Data Restructuring
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Challenges
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Multiple components needed to adhere to the single responsibility principle.
+* Asynchronous testing with multiple fetch calls on different components.  It took awhile to understand the intricacies of the React Testing Library and I feel much stronger about testing now!
+* Extensions not completed:
+  - Creating specific brewery detail pages to view more photos and information about each brewery.
+  - Responsive Web Design layout for the app.  Understanding and implementing media queries
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Wins
 
-### Code Splitting
+This was a fun project with many different components and topics that all came together!  I am most happy with my testing library and multiple fetch calls.  My primary goal of the project was to gain a deeper understanding of the React Testing Library and I believe I did that.  Also, it's a light-hearted app that took a lot of thought to come together and I am proud of the structure and flow of the app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Nick Taylor](https://github.com/nickstaylor)
