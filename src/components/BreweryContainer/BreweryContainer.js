@@ -1,9 +1,10 @@
 import React from 'react'
 import './BreweryContainer.css'
 import Brewery from '../Brewery/Brewery'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const BreweryContainer  = (props) => {
+
     let zipCode
     if (props.zipCodeError){
       zipCode = '80202'
@@ -36,6 +37,14 @@ const BreweryContainer  = (props) => {
         </section>
         </div>
     )
+  }
+
+  BreweryContainer.propTypes = {
+    favoriteBreweryIDs: PropTypes.array,
+    breweries: PropTypes.array,
+    zipCodeError: PropTypes.bool,
+    zipCode: PropTypes.string,
+    toggleFavoriteBrewery: PropTypes.func
   }
 
 export default BreweryContainer

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './DadJoke.css'
 import { Link } from 'react-router-dom'
 import { dadJoke } from "../../apiCalls.js"
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 class DadJoke extends Component {
@@ -81,7 +81,10 @@ render(){
   )
 }
 
+}
 
+DadJoke.propTypes = {
+favoriteDadJoke: PropTypes.func
 }
 
 export default DadJoke

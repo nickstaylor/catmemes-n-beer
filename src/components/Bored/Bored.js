@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import './Bored.css'
 import {Link } from 'react-router-dom'
 import { boredIdea } from "../../apiCalls.js"
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 
 class Bored extends Component {
   constructor(props){
     super(props)
-  this.state = {
-    loading: false,
-    activity: '',
-    getNewActivity: false,
-    activitySaved: false
-  }
+    this.state = {
+      loading: false,
+      activity: '',
+      getNewActivity: false,
+      activitySaved: false
+    }
 }
 
 componentDidMount = () =>{
@@ -68,7 +68,12 @@ render(){
   )
 }
 
-
 }
+
+
+Bored.propTypes = {
+favoriteBoredActivity: PropTypes.func
+}
+
 
 export default Bored

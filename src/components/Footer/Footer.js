@@ -5,8 +5,9 @@ import thumbsUp from "../../images/thumbUp.png"
 import randomCatFact from "../../images/randomCatFact.png"
 
 const Footer = (props) => {
-    const {randomFact} = props
-    // console.log(randomFact);
+
+  const {randomFact} = props
+
   return (
     <footer className="footer-container">
     <img
@@ -35,6 +36,7 @@ const Footer = (props) => {
 Footer.propTypes = {
   randomFactVote: PropTypes.func,
   randomFact: PropTypes.object,
+  getNewFact: PropTypes.func
 };
 
 export default Footer;

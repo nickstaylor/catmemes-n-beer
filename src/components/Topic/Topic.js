@@ -1,11 +1,11 @@
 import React  from 'react'
 import './Topic.css'
 import { Link } from 'react-router-dom'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 const Topic = (props) => {
-// console.log(props)
+
 const { topic } = props
   return (
     <div className="area-box">
@@ -19,4 +19,7 @@ const { topic } = props
 
 }
 
+Topic.propTypes = {
+topic: PropTypes.object
+}
 export default Topic

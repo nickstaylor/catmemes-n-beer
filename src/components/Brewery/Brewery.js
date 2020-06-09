@@ -5,6 +5,7 @@ import starOutline from "../../images/star-outline.svg";
 import starFilled from "../../images/pinkStar.png";
 import MdStar from 'react-ionicons/lib/MdStar'
 import brewery from "../../images/Brewery.jpg"
+import PropTypes from 'prop-types'
 
 class Brewery extends Component {
   constructor(props){
@@ -92,6 +93,12 @@ class Brewery extends Component {
     </section>
   )
 }
+}
+
+Brewery.propTypes = {
+ brewery: PropTypes.object,
+ id: PropTypes.string,
+ toggleFavoriteBrewery: PropTypes.func
 }
 
 export default Brewery

@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import './CatMemes.css'
 import { Link } from 'react-router-dom'
 import {catImages} from "../../apiCalls.js"
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 class CatMemes extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       loading: false,
       catImages: [],
@@ -111,6 +110,10 @@ class CatMemes extends Component {
       </div>
     )
   }
+}
+
+CatMemes.propTypes = {
+favoriteCatMeme: PropTypes.func
 }
 
 

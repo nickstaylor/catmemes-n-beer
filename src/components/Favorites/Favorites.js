@@ -1,7 +1,7 @@
 import React from 'react'
 import './Favorites.css'
 import { Link } from 'react-router-dom'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const Favorites = (props)=> {
   let boredActivities = props.favoriteBoredActivity
@@ -9,6 +9,7 @@ const Favorites = (props)=> {
   let catMemes = props.favoriteCatMemes
   let breweries = props.favoriteBreweries
   let sum = catMemes + breweries + dadJokes + boredActivities
+
   return (
     !sum ? <div>No Favorites yet!  <Link to="/landing">Explore the site!</Link></div> :
     <div className ="favorites-container">
@@ -43,8 +44,15 @@ const Favorites = (props)=> {
 
   )
 
-
-
 }
+
+Favorites.propTypes = {
+  topic: PropTypes.object,
+  favoriteBoredActivity: PropTypes.number,
+  favoriteDadJokes: PropTypes.number,
+  favoriteCatMemes: PropTypes.number,
+  favoriteBreweries: PropTypes.number,
+  loadFavoritesBreweries: PropTypes.func,
+};
 
 export default Favorites

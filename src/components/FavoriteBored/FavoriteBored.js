@@ -2,10 +2,10 @@ import React from 'react'
 import './FavoriteBored.css'
 import { Link } from 'react-router-dom'
 import IndBoredAdvice from '../IndBoredAdvice/IndBoredAdvice'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const FavoriteBored = (props)=> {
-  console.log('boredadvice', props);
+
   const favorites = props.favoriteBoredActivities.map(activity=> {
     return (
       <IndBoredAdvice
@@ -25,6 +25,12 @@ return (
 
   )
 
+}
+
+FavoriteBored.propTypes = {
+  name: PropTypes.string,
+  favoriteBoredActivities: PropTypes.array,
+  deleteFavorite: PropTypes.func
 }
 
 export default FavoriteBored
