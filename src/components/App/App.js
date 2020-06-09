@@ -54,8 +54,8 @@ class App extends Component {
       return {text: fact.text, upVotes: fact.upvotes, id: fact._id, voted: false}
     })
     let newFacts = facts.filter(fact => fact.id !== '5ece9fa9a0d2ec00178ae28e')
-    this.setState({catFacts: newFacts,
-                  randomFact: newFacts[0]})
+    this.setState({ catFacts: newFacts,
+                    randomFact: newFacts[0] })
   }
 
   getCoordinatesFromZip = async (zipCode) => {
@@ -69,7 +69,6 @@ class App extends Component {
       this.setState({zipCodeError: true})
     }
     this.getBrewerySpots()
-    console.log('zipCodeFetch', fetchedZipCode);
   }
 
   getBrewerySpots = async () => {
@@ -105,23 +104,22 @@ class App extends Component {
         }
       )
     })
-    console.log(breweryArray);
-    this.setState({breweries: breweryArray})
+    this.setState({ breweries: breweryArray })
   }
 
   addUser = (user) => {
     this.setState ({ user: user.user,
-                     zipCode: user.zipCode})
+                     zipCode: user.zipCode })
     this.getCoordinatesFromZip(+user.zipCode)
   }
 
   removeUser = () => {
-    this.setState({user: '',
-                  favoriteCatMemes: [],
-                  favoriteDadJokes: [],
-                  favoriteBreweries: [],
-                  favoriteBoredActivities: [],
-                  favoriteBreweryIDs: []})
+    this.setState({ user: '',
+                   favoriteCatMemes: [],
+                   favoriteDadJokes: [],
+                   favoriteBreweries: [],
+                   favoriteBoredActivities: [],
+                   favoriteBreweryIDs: [] })
   }
 
   favoriteCatMeme = (object) => {
@@ -174,14 +172,11 @@ class App extends Component {
   getNewFact = ()=> {
     let anotherRandomNumber = Math.floor(Math.random() * this.state.catFacts.length);
     let randomFact = this.state.catFacts[anotherRandomNumber]
-    this.setState({
-    randomFact: randomFact,
-    })
+    this.setState({randomFact: randomFact})
   }
 
   randomFactVote = (id) => {
     let upVote = this.state.catFacts.find(fact=>fact.id === id)
-    console.log(upVote);
     if (!this.state.randomFact.voted){
       upVote.upVotes++
       upVote.voted = true
