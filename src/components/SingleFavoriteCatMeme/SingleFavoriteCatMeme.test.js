@@ -6,7 +6,7 @@ import SingleFavoriteCatMeme from "./SingleFavoriteCatMeme";
 
 
 
-describe("SingleFavoriteCatMeme", ()=>{
+describe("SingleFavoriteCatMeme", () => {
 
   let favoriteCatMeme
   let router
@@ -31,7 +31,7 @@ describe("SingleFavoriteCatMeme", ()=>{
     </BrowserRouter>
   })
 
-  it('should display the Individual Favorited Cat Meme on render', ()=>{
+  it('should display the Individual Favorited Cat Meme on render', () => {
 
   const { getByText, getByRole } = render(router)
 
@@ -41,15 +41,12 @@ describe("SingleFavoriteCatMeme", ()=>{
   expect(getByText("Delete")).toBeInTheDocument();
   })
 
-  it('should delete the favorited cat meme on click of delete button', ()=>{
+  it('should delete the favorited cat meme on click of delete button', () => {
 
-    const { getByText, queryByTestId } = render(router)
+    const { getByText } = render(router)
     const button = getByText('Delete');
     fireEvent.click(button)
     expect(mockdeleteFavorite).toHaveBeenCalled()
-    // use this in the intergation tests
-    // expect(queryByTestId("1591657715169")).not.toBeInTheDocument();
-
 
   })
 

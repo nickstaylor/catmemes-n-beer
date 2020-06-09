@@ -40,13 +40,10 @@ describe("Individual Bored Activity", ()=>{
 
   it('should delete the favorited advice on click of delete button', ()=>{
 
-    const { getByText, queryByTestId } = render(router)
+    const { getByText } = render(router)
     const button = getByText('Delete');
     fireEvent.click(button)
     expect(mockdeleteFavorite).toHaveBeenCalled()
-    // use this in the intergation tests
-    // expect(queryByTestId("1591657715169")).not.toBeInTheDocument();
-
 
   })
 
