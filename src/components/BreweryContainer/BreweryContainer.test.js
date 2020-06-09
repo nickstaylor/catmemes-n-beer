@@ -58,14 +58,14 @@ describe("BreweryContainer", ()=>{
 
   it('should display each brewery on render', () => {
 
-  const { getByText, getAllByRole, getAllByText, debug } = render(router)
+  const { getByText, getAllByRole, getAllByText } = render(router)
 
   expect(getAllByText("Comrade Brewing Company")).toHaveLength(2)
   expect(getByText("7667 E Iliff Ave suite f, Denver")).toBeInTheDocument()
   expect(getByText("1634 18th St, Denver")).toBeInTheDocument()
   expect(getAllByRole('img')).toHaveLength(2)
   expect(getAllByText("Wynkoop Brewing Company")).toHaveLength(2)
-  debug()
+
   })
 
   it('should show as many favorite stars as breweries rendered', ()=>{

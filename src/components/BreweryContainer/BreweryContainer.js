@@ -11,7 +11,7 @@ const BreweryContainer  = (props) => {
     } else {
       zipCode = props.zipCode
     }
-    console.log(props);
+
     const breweries = props.breweries.map(brewery => {
       props.favoriteBreweryIDs.forEach(id=>{
         if (brewery.id === id){
@@ -43,7 +43,7 @@ const BreweryContainer  = (props) => {
     favoriteBreweryIDs: PropTypes.array,
     breweries: PropTypes.array,
     zipCodeError: PropTypes.bool,
-    zipCode: PropTypes.number,
+    zipCode: PropTypes.string,
     toggleFavoriteBrewery: PropTypes.func
   }
 

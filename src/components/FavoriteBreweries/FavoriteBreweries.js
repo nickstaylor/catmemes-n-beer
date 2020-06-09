@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 
 class FavoriteBreweries extends Component{
   constructor(props){
+    console.log(props);
     super(props)
     this.state = {
       favoriteBreweries: this.props.favoriteBreweries
@@ -48,7 +49,7 @@ class FavoriteBreweries extends Component{
 
 FavoriteBreweries.propTypes = {
   toggleFavoriteBrewery: PropTypes.func,
-  favoriteBreweries: PropTypes.object,
+  favoriteBreweries: PropTypes.array,
   updatefavoriteBreweries: PropTypes.func
 }
 

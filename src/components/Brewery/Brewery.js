@@ -59,6 +59,7 @@ class Brewery extends Component {
     <section className="individual-brewery">
     <img
       id={id}
+      data-testid={id}
       src={this.state[this.state.starImage]}
       className="favorite-star"
       alt="favorite"

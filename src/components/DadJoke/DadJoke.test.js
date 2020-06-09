@@ -55,9 +55,8 @@ describe("Dad Joke", ()=>{
 
   it('can view a random dad joke when the component loads', async () => {
 
-    const { getByText, debug } = render(router)
+    const { getByText } = render(router)
     const joke = await waitFor(()=> getByText("How many hipsters does it take to change a lightbulb?"))
-    debug()
     expect(joke).toBeInTheDocument()
   })
 
