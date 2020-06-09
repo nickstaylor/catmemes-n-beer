@@ -17,7 +17,7 @@
 
  Exhausted kitty-loving dads can relax by creating cat memes, laughing at random cheesy dad jokes, getting sage advice for those pesky bored kids, or pulling up a list of local breweries.  Dads can save their cat memes, the jokes and advice.  They can also favorite breweries.  The site keeps track of favorites in the favorites page.  Enjoy Dads!
 
-(screen shots of App)
+![Mod3FinalPart2](https://user-images.githubusercontent.com/44849120/84206666-ded65600-aa6c-11ea-805a-d48b02a529e5.gif)
 
 
  ### Technologies Used
