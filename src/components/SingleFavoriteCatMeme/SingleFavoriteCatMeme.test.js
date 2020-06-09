@@ -10,7 +10,7 @@ describe("SingleFavoriteCatMeme", () => {
 
   let favoriteCatMeme
   let router
-  let mockdeleteFavorite
+  let mockDeleteFavorite
   let id
   let name
 
@@ -19,11 +19,11 @@ describe("SingleFavoriteCatMeme", () => {
       image: "https://cdn2.thecatapi.com/images/cpf.png", topText: "mmmm"}
     id = 1591659294571
     name = "favoriteCatMemes"
-    mockdeleteFavorite= jest.fn()
+    mockDeleteFavorite= jest.fn()
 
   router = <BrowserRouter>
     <SingleFavoriteCatMeme
-      deleteFavorite={mockdeleteFavorite}
+      deleteFavorite={mockDeleteFavorite}
       data={favoriteCatMeme}
       id={id}
       name={name}
@@ -46,7 +46,7 @@ describe("SingleFavoriteCatMeme", () => {
     const { getByText } = render(router)
     const button = getByText('Delete');
     fireEvent.click(button)
-    expect(mockdeleteFavorite).toHaveBeenCalled()
+    expect(mockDeleteFavorite).toHaveBeenCalled()
 
   })
 

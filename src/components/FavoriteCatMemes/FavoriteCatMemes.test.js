@@ -6,11 +6,11 @@ import FavoriteCatMemes from "./FavoriteCatMemes";
 
 
 
-describe("FavoriteBored", ()=>{
+describe("FavoriteCatMemes", ()=>{
 
   let favoriteCatMemes
   let router
-  let mockdeleteFavorite
+  let mockDeleteFavorite
   let name
 
   beforeEach(()=> {
@@ -25,11 +25,11 @@ describe("FavoriteBored", ()=>{
                         image: "https://cdn2.thecatapi.com/images/398.jpg",
                         topText: "I am "}]
     name = "favoriteCatMemes"
-    mockdeleteFavorite= jest.fn()
+    mockDeleteFavorite= jest.fn()
 
   router = <BrowserRouter>
     <FavoriteCatMemes
-      deleteFavorite={mockdeleteFavorite}
+      deleteFavorite={mockDeleteFavorite}
       favoriteCatMemes={favoriteCatMemes}
       name={name}
     />
@@ -52,6 +52,28 @@ describe("FavoriteBored", ()=>{
     const { getAllByText } = render(router)
     const button = getAllByText('Delete');
     expect(button).toHaveLength(3)
+
+  })
+
+  it('should show a message if there are no favorites and provide a link to the cat meme page', () => {
+
+    favoriteCatMemes = []
+    router = <BrowserRouter>
+              <FavoriteCatMemes
+                deleteFavorite={mockDeleteFavorite}
+                favoriteCatMemes={favoriteCatMemes}
+                name={name}
+              />
+            </BrowserRouter>
+
+    const { getByText } = render(router)
+
+    const message = getByText("No favorites yet! Create some")
+    const link = getByText("Cat Memes!")
+    expect(link).toBeInTheDocument()
+    expect(message).toBeInTheDocument()
+    fireEvent.click(link)
+    expect(window.location.href).toBe("http://localhost/catmemes");
 
   })
 

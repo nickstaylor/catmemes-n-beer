@@ -10,7 +10,7 @@ describe("Individual Dad Joke", ()=>{
 
   let favoriteDadJoke
   let router
-  let mockdeleteFavorite
+  let mockDeleteFavorite
   let id
   let name
 
@@ -20,11 +20,11 @@ describe("Individual Dad Joke", ()=>{
                       setup: "What was the pumpkin’s favorite sport?"}
     id = 1591657715169
     name = "favoriteDadJokes"
-    mockdeleteFavorite= jest.fn()
+    mockDeleteFavorite= jest.fn()
 
   router = <BrowserRouter>
     <IndDadJoke
-      deleteFavorite={mockdeleteFavorite}
+      deleteFavorite={mockDeleteFavorite}
       data={favoriteDadJoke}
       id={id}
       name={name}
@@ -46,7 +46,7 @@ describe("Individual Dad Joke", ()=>{
     const { getByText, queryByTestId } = render(router)
     const button = getByText('Delete');
     fireEvent.click(button)
-    expect(mockdeleteFavorite).toHaveBeenCalled()
+    expect(mockDeleteFavorite).toHaveBeenCalled()
     // use this in the intergation tests
     // expect(queryByTestId("1591657715169")).not.toBeInTheDocument();
 

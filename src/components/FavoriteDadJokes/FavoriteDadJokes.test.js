@@ -10,7 +10,7 @@ describe("FavoriteDadJokes", ()=>{
 
   let favoriteDadJokes
   let router
-  let mockdeleteFavorite
+  let mockDeleteFavorite
   let name
 
   beforeEach(()=> {
@@ -22,11 +22,11 @@ describe("FavoriteDadJokes", ()=>{
                       setup: "Did you know crocodiles could grow up to 15 feet?"}]
 
     name = "favoriteDadJokes"
-    mockdeleteFavorite= jest.fn()
+    mockDeleteFavorite= jest.fn()
 
   router = <BrowserRouter>
     <FavoriteDadJokes
-      deleteFavorite={mockdeleteFavorite}
+      deleteFavorite={mockDeleteFavorite}
       favoriteDadJokes={favoriteDadJokes}
       name={name}
     />
@@ -49,6 +49,27 @@ describe("FavoriteDadJokes", ()=>{
     const button = getAllByText('Delete');
     expect(button).toHaveLength(2)
 
+  })
+
+  it('should show a message if there are no favorites and provide a link to the dad joke page', () => {
+
+    favoriteDadJokes = []
+    router = <BrowserRouter>
+              <FavoriteDadJokes
+              deleteFavorite={mockDeleteFavorite}
+              favoriteDadJokes={favoriteDadJokes}
+              name={name}
+              />
+            </BrowserRouter>
+
+    const { getByText } = render(router)
+
+    const message = getByText("No favorites yet! Check out some awesome")
+    const link = getByText("Dad Jokes!")
+    expect(link).toBeInTheDocument()
+    expect(message).toBeInTheDocument()
+    fireEvent.click(link)
+    expect(window.location.href).toBe("http://localhost/dadjokes");
   })
 
 })

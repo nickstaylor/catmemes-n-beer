@@ -10,7 +10,7 @@ describe("Individual Bored Activity", ()=>{
 
   let favoriteBoredActivity
   let router
-  let mockdeleteFavorite
+  let mockDeleteFavorite
   let id
   let name
 
@@ -18,11 +18,11 @@ describe("Individual Bored Activity", ()=>{
     favoriteBoredActivity = "Make homemade ice cream"
     id = 1591658643472
     name = "favoriteBoredActivities"
-    mockdeleteFavorite= jest.fn()
+    mockDeleteFavorite= jest.fn()
 
   router = <BrowserRouter>
     <IndBoredAdvice
-      deleteFavorite={mockdeleteFavorite}
+      deleteFavorite={mockDeleteFavorite}
       activity={favoriteBoredActivity}
       id={id}
       name={name}
@@ -43,7 +43,7 @@ describe("Individual Bored Activity", ()=>{
     const { getByText } = render(router)
     const button = getByText('Delete');
     fireEvent.click(button)
-    expect(mockdeleteFavorite).toHaveBeenCalled()
+    expect(mockDeleteFavorite).toHaveBeenCalled()
 
   })
 
