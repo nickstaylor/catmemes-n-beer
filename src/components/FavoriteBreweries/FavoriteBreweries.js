@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 
 class FavoriteBreweries extends Component{
   constructor(props){
-    console.log(props);
     super(props)
     this.state = {
       favoriteBreweries: this.props.favoriteBreweries
@@ -17,7 +16,6 @@ class FavoriteBreweries extends Component{
       let updatedFavorites = this.state.favoriteBreweries.filter((brewery) => {
         return brewery.id !== id;
       });
-      console.log(updatedFavorites);
       this.setState({ favoriteBreweries: [...updatedFavorites] });
       this.props.updatefavoriteBreweries(updatedFavorites);
     };

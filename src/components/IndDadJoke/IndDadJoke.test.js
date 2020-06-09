@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import IndDadJoke from "./IndDadJoke";
 
 
-
 describe("Individual Dad Joke", ()=>{
 
   let favoriteDadJoke
@@ -47,9 +46,6 @@ describe("Individual Dad Joke", ()=>{
     const button = getByText('Delete');
     fireEvent.click(button)
     expect(mockDeleteFavorite).toHaveBeenCalled()
-    // use this in the intergation tests
-    // expect(queryByTestId("1591657715169")).not.toBeInTheDocument();
-
 
   })
 

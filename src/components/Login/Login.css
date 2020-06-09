@@ -1,8 +1,7 @@
-
-.login-form-background{
+.login-form-background {
   display: flex;
   background-image: linear-gradient(rgba(6, 18, 90, 0.2), rgba(14, 44, 99, 0.2)),
-   url('/images/Orange_cat_cartoon.png');
+    url('/images/Orange_cat_cartoon.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -11,22 +10,23 @@
   min-height: 100vh;
   width: 100%;
   padding: 50px 0;
-  }
+}
 
-  .login-content {
-    width: 100%;
-    margin: auto;
-  }
-  .main-title {
+.login-content {
+  width: 100%;
+  margin: auto;
+}
+
+.main-title {
   color: whitesmoke;
-  }
+}
 
-  .zipcode {
-    font-size: .4em;
-    margin-top: -2%;
-  }
+.zipcode {
+  font-size: .4em;
+  margin-top: -2%;
+}
 
-  .login-form {
+.login-form {
   border-radius: 7px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
   width: 40%;
@@ -37,44 +37,44 @@
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
-  }
+}
 
-  .login-form-item {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+.login-form-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-  .login-form-item input {
-    border-radius: 7px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-    border: 0;
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    margin-left: -10px;
-    width: 100%;
-    background-color: #fffefe;
-    color: #333333;
-  }
+.login-form-item input {
+  border-radius: 7px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  border: 0;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  margin-left: -10px;
+  width: 100%;
+  background-color: #fffefe;
+  color: #333333;
+}
 
-  .login-btn {
-    margin-top: 15px;
-    padding: 10px 40px;
-    border-radius: 5px;
-    align-self: center;
-    cursor: pointer;
-    border: 2px solid #333333;
-    font-size: 1.2rem;
-    font-weight: bold;
-    opacity: .8;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-    color: #333333;
-  }
+.login-btn {
+  margin-top: 15px;
+  padding: 10px 40px;
+  border-radius: 5px;
+  align-self: center;
+  cursor: pointer;
+  border: 2px solid #333333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: .8;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
 
-  .login-form-item label {
-    text-align: left;
-    margin-left: -7px;
-  }
+.login-form-item label {
+  text-align: left;
+  margin-left: -7px;
+}

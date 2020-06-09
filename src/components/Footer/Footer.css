@@ -1,9 +1,9 @@
 .thumbs-up {
-height: 40px;
-width: 40px;
-margin-right: 5px;
-margin-bottom: 5px;
-padding-left: 5px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding-left: 5px;
 }
 
 .random-cat-fat-footer-image {
@@ -13,10 +13,11 @@ padding-left: 5px;
   padding-right: 5px;
 }
 
-.thumbs-up:hover{
+.thumbs-up:hover {
   cursor: pointer
 }
-.random-fact{
+
+.random-fact {
   color: whitesmoke;
 }
 
@@ -34,19 +35,20 @@ padding-left: 5px;
 }
 
 .footer-container button {
-    margin-top: -15px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    margin: 2px;
-    align-self: center;
-    cursor: pointer;
-    border: 2px solid #333333;
-    font-size: 1.2rem;
-    font-weight: bold;
-    opacity: .8;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-    color: #333333;
+  margin-top: -15px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin: 2px;
+  align-self: center;
+  cursor: pointer;
+  border: 2px solid #333333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: .8;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  color: #333333;
 }
+
 .footer-votes {
   display: flex;
   justify-content: center;

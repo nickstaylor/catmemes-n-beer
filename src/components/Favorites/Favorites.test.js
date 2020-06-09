@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import Favorites from "./Favorites";
 
 
-
 describe("Favorites", () => {
 
   let boredActivities

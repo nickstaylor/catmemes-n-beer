@@ -43,7 +43,7 @@ const BreweryContainer  = (props) => {
     favoriteBreweryIDs: PropTypes.array,
     breweries: PropTypes.array,
     zipCodeError: PropTypes.bool,
-    zipCode: PropTypes.string,
+    zipCode: PropTypes.number,
     toggleFavoriteBrewery: PropTypes.func
   }
 

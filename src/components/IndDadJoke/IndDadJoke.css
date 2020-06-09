@@ -22,14 +22,14 @@
 .topic-button {
   width: 90%;
   margin-top: -15px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    align-self: center;
-    cursor: pointer;
-    border: 2px solid #333333;
-    font-size: 1.2rem;
-    font-weight: bold;
-    opacity: .8;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-    color: #333333;
+  padding: 5px 20px;
+  border-radius: 5px;
+  align-self: center;
+  cursor: pointer;
+  border: 2px solid #333333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: .8;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  color: #333333;
 }

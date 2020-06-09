@@ -1,13 +1,12 @@
 import React from "react";
-import { render, fireEvent, waitFor, cleanup } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { BrowserRouter, MemoryRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import DadJoke from "./DadJoke";
 import { dadJoke } from '../../apiCalls.js'
 jest.mock('../../apiCalls.js')
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
-
 
 
 describe("Dad Joke", ()=>{
@@ -32,7 +31,6 @@ describe("Dad Joke", ()=>{
     </MemoryRouter>
   })
 
-  // afterEach(cleanup)
 
   it('should display the Dad Joke page on render', ()=>{
 

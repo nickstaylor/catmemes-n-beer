@@ -1,13 +1,12 @@
 import React from "react";
 import { render, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { BrowserRouter, MemoryRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import CatMemes from "./CatMemes";
 import { catImages } from '../../apiCalls.js'
 jest.mock('../../apiCalls.js')
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
-
 
 
 describe("Cat Memes", ()=>{
@@ -31,7 +30,6 @@ describe("Cat Memes", ()=>{
     </MemoryRouter>
   })
 
-  // afterEach(cleanup)
 
   it('should display the Cat Meme page on render', () => {
 
@@ -56,13 +54,13 @@ describe("Cat Memes", ()=>{
 
   it('can view a fetched cat image when the meow button is clicked', async () => {
 
-    const { getByText, debug, getByRole } = render(router)
+    const { getByText, getByRole } = render(router)
     const originalImage = getByRole('img', {src: 'https://cdn2.thecatapi.com/images/vh.jpg'})
     expect(originalImage).toBeInTheDocument()
     fireEvent.click(getByText("Meow"))
     const catMeme = await waitFor(()=> getByRole('img', {src:"https://cdn2.thecatapi.com/images/bpb.jpg"}))
     expect(catMeme).toBeInTheDocument()
-    debug()
+    
   })
 
 })

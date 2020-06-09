@@ -1,4 +1,3 @@
-
 .individual-brewery {
   align-items: center;
   background-color: #7F9EEF;
@@ -14,56 +13,56 @@
   width: 300px;
 }
 
-  .brewery-img {
-      border-radius: 10px;
-      height: 150px;
-      margin-top: -15px;
-      text-align: center;
-      width: 200px;
-  }
+.brewery-img {
+  border-radius: 10px;
+  height: 150px;
+  margin-top: -15px;
+  text-align: center;
+  width: 200px;
+}
 
-  .individual-brewery h3 {
-    color: white;
-    margin-top: -20px;
-  }
+.individual-brewery h3 {
+  color: white;
+  margin-top: -20px;
+}
 
-  .listing-button:hover {
-    transform: scale(1.1);
-  }
+.listing-button:hover {
+  transform: scale(1.1);
+}
 
-  .favorite-star {
-    background-color: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    height: 30px;
-    position: relative;
-    right: 126px;
-    top: 272px;
-    width: 30px;
-  }
+.favorite-star {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  position: relative;
+  right: 126px;
+  top: 272px;
+  width: 30px;
+}
 
-  .favorite-star:hover {
-    transform: scale(1.1);
-  }
+.favorite-star:hover {
+  transform: scale(1.1);
+}
 
-.lower-brewery-container{
+.lower-brewery-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: whitesmoke;
-
 }
-  .spot-title,
-  .spot-adress,
-  .stars-container {
-    margin: 0;
-    cursor: pointer;
-    text-decoration: none;
-  }
 
-  .open-spot,
-  .category-spot {
-    text-decoration: none;
-    color: inherit;
-  }
+.spot-title,
+.spot-adress,
+.stars-container {
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.open-spot,
+.category-spot {
+  text-decoration: none;
+  color: inherit;
+}
