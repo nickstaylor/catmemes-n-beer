@@ -19,6 +19,8 @@
 
 ![Mod3FinalPart2](https://user-images.githubusercontent.com/44849120/84206666-ded65600-aa6c-11ea-805a-d48b02a529e5.gif)
 
+![Mod3FinalPart1](https://user-images.githubusercontent.com/44849120/84207151-e813f280-aa6d-11ea-9d2e-da1e34547952.gif)
+
 
  ### Technologies Used
 
