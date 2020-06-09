@@ -53,7 +53,7 @@ class Brewery extends Component {
       address,
       id
     } = this.props.brewery
-    const stars = [...Array(Math.round(rating))].map(i => <MdStar/>)
+    const stars = [...Array(Math.round(rating))].map(i => <MdStar />)
 
   return (
     <section className="individual-brewery">
