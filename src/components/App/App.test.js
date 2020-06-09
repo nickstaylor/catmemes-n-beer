@@ -3,15 +3,15 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import App from './App';
-import Landing from '../Landing/Landing'
 import MutationObserver from '@sheerun/mutationobserver-shim'
 window.MutationObserver = MutationObserver
 import { catFacts, getCoordinates, getBreweries, getBreweryPhotos, dadJoke } from "../../apiCalls.js"
 jest.mock("../../apiCalls")
-// jest.mock(catFacts)
+
 
 describe("App", () => {
   let randomDadJoke
+
   beforeEach( async () => {
 
     let sampleCatFactApiData = [{text: "It was illegal to slay cats in ancient Egypt, in large part because they provided the great service of controlling the rat population.",
@@ -24,6 +24,7 @@ describe("App", () => {
     let sampleZipCodeApiData = [{formatted_address: "Denver, CO 80202, USA", geometry: {location: {lat: 39.7541032, lng: -105.0002242}, location_type: "APPROXIMATE"},
     place_id: "ChIJwTF6RcN4bIcRWd8aCrbRvX0", types: ["postal_code"]}]
     getCoordinates.mockResolvedValueOnce(sampleZipCodeApiData)
+
     let sampleBreweryApiData = [{
       id: "87170c5a51a62f45f5361e357265b6089d8c4370",
       name: "Wynkoop Brewing Company",
@@ -36,6 +37,7 @@ describe("App", () => {
       reference: "ChIJBadAhB95bIcR1h_loSGkaR0",
       vicinity: "1634 18th St, Denver"
     }]
+
     let sampleGetBreweryPhoto = "https://lh3.googleusercontent.com/p/AF1QipNu4SE4z4WPcSewxeiG5Zr70WEFUlHj5rhx5pa3=s1600-w500"
     getBreweryPhotos.mockResolvedValueOnce(sampleGetBreweryPhoto)
     getBreweries.mockResolvedValueOnce(sampleBreweryApiData)
@@ -45,6 +47,8 @@ describe("App", () => {
     punchline: "Oh, it's a really obscure number. You've probably never heard of it."}
     await dadJoke.mockResolvedValueOnce(randomDadJoke)
     })
+
+
 
   it("should be able to log users in and out", ()  => {
   const router = (
@@ -77,7 +81,7 @@ describe("App", () => {
   expect(getByText("A Little Getaway for Kitty-Loving Cheesy Beer Dads")).toBeInTheDocument();
   });
 
-  it("should take user to specific topic when button clicked", async () => {
+  it("should take user to a specific topic when button clicked", async () => {
     const topics = [{name: 'Create a Cat Meme!', topic: 'catMemes'},
     {name: 'Cheesy Dad Jokes!', topic: 'dadjokes'},
     {name: 'Bored Kids?', topic: 'bored'},

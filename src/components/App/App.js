@@ -34,7 +34,7 @@ class App extends Component {
       favoriteBreweryIDs: [],
       favoriteBoredActivities: [],
       breweries: [],
-      randomFact: '',
+      randomFact: {},
       user: '',
       zipCode: '',
       coordinates: {},
