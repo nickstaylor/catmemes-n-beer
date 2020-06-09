@@ -24,7 +24,6 @@ componentDidMount = () =>{
 getBoredIdea = async () => {
   this.setState({loading: true})
   let randomIdea = await boredIdea()
-  console.log('boredAPI', randomIdea);
   this.setState({activity: randomIdea,
                 activitySaved: false,
                 loading: false})

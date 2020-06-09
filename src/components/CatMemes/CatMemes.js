@@ -22,7 +22,6 @@ class CatMemes extends Component {
   componentDidMount = async() => {
     this.setState({loading: true})
     const catImagesApi = await catImages()
-    console.log('catImagesApi', catImagesApi);
     let images = catImagesApi.map(image => image.url)
     this.setState({ catImages: images,
                     loading: false})

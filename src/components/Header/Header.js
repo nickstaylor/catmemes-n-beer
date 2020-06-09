@@ -5,12 +5,11 @@ import PropTypes from "prop-types";
 
 const Header = (props) => {
 
-  let favorites = 0
   let boredActivities = props.favoriteBoredActivity
   let dadJokes = props.favoriteDadJokes
   let catMemes = props.favoriteCatMemes
   let breweries = props.favoriteBreweries
-  let sum = favorites + catMemes + breweries + dadJokes + boredActivities
+  let sum = catMemes + breweries + dadJokes + boredActivities
 
   return (
     <header>

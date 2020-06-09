@@ -14,9 +14,10 @@ return (
       <button
        id={props.id}
        className="fav-meme-btn"
-       onClick={() => props.deleteFavorite(props.id, props.name)}>Delete</button>
-
-    </div>
+       onClick={() => props.deleteFavorite(props.id, props.name)}>
+       Delete
+     </button>
+  </div>
   )
 
 }

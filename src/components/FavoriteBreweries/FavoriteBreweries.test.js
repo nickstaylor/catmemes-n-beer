@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import FavoriteBreweries from "./FavoriteBreweries";
 
 
-
 describe("FavoriteBreweries", ()=>{
 
   let favoriteBreweries

@@ -17,7 +17,8 @@ const FavoriteBored = (props)=> {
       />
     )
   })
-return (
+  
+  return (
   !props.favoriteBoredActivities.length ? <div>No favorites yet! Check out some <Link to="/bored">Bored Kids</Link> ideas!</div> :
     <div className ="favorites-container">
     {favorites}

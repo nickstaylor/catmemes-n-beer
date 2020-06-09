@@ -17,19 +17,20 @@ describe("App", () => {
   let sampleZipCodeApiData
 
   beforeEach( async () => {
+
     sampleCatImages = [{breeds: [], height: 316, id: "bpb",
-    url: "https://cdn2.thecatapi.com/images/bpb.jpg", width: 500}]
+      url: "https://cdn2.thecatapi.com/images/bpb.jpg", width: 500}]
     await catImages.mockResolvedValueOnce(sampleCatImages)
 
     let sampleCatFactApiData = [{text: "It was illegal to slay cats in ancient Egypt, in large part because they provided the great service of controlling the rat population.",
-    type: "cat", upvotes: 8, user: {_id: "58e007480aac31001185ecef"},userUpvoted: null, _id: "58e00af60aac31001185ed1d"},
-    {text: "In the 1960s, the CIA tried to turn a cat into a bonafide spy by implanting a microphone into her ear and a radio transmitter at the base of her skull. She somehow survived the surgery but got hit by a taxi on her first mission.",
-    type: "cat", upvotes: 7, user: {_id: "58e007480aac31001185ecef"}, userUpvoted: null, _id: "58e009650aac31001185ed13"},
-    {text: "gato loves grace", type: "cat", upvotes: 7, user: {_id: "5a9ac18c7478810ea6c06381"},userUpvoted: null, _id: "5e236d6bdc76630015d4c51f"}]
+      type: "cat", upvotes: 8, user: {_id: "58e007480aac31001185ecef"},userUpvoted: null, _id: "58e00af60aac31001185ed1d"},
+      {text: "In the 1960s, the CIA tried to turn a cat into a bonafide spy by implanting a microphone into her ear and a radio transmitter at the base of her skull. She somehow survived the surgery but got hit by a taxi on her first mission.",
+      type: "cat", upvotes: 7, user: {_id: "58e007480aac31001185ecef"}, userUpvoted: null, _id: "58e009650aac31001185ed13"},
+      {text: "gato loves grace", type: "cat", upvotes: 7, user: {_id: "5a9ac18c7478810ea6c06381"},userUpvoted: null, _id: "5e236d6bdc76630015d4c51f"}]
     await catFacts.mockResolvedValueOnce(sampleCatFactApiData)
 
     sampleZipCodeApiData = [{formatted_address: "Denver, CO 80202, USA", geometry: {location: {lat: 39.7541032, lng: -105.0002242}, location_type: "APPROXIMATE"},
-    place_id: "ChIJwTF6RcN4bIcRWd8aCrbRvX0", types: ["postal_code"]}]
+      place_id: "ChIJwTF6RcN4bIcRWd8aCrbRvX0", types: ["postal_code"]}]
     await getCoordinates.mockResolvedValueOnce(sampleZipCodeApiData)
 
     sampleBreweryApiData = [{
@@ -50,14 +51,13 @@ describe("App", () => {
     await getBreweries.mockResolvedValueOnce(sampleBreweryApiData)
 
     randomDadJoke = {id: 141, type: "general",
-    setup: "How many hipsters does it take to change a lightbulb?",
-    punchline: "Oh, it's a really obscure number. You've probably never heard of it."}
+      setup: "How many hipsters does it take to change a lightbulb?",
+      punchline: "Oh, it's a really obscure number. You've probably never heard of it."}
     await dadJoke.mockResolvedValueOnce(randomDadJoke)
 
     sampleBoredIdea = "Take a hike at a local park"
     await boredIdea.mockResolvedValueOnce(sampleBoredIdea)
     })
-
 
 
   it("should be able to log users in and out", async ()  => {
@@ -189,9 +189,9 @@ describe("App", () => {
 
   it('User can view breweries, favorite one, then view and favorite a bored idea, then view both in favorites and delete them', async () => {
 
-    const {getByText, getByPlaceholderText, getByTestId, queryByText, debug, getAllByText } = render(<MemoryRouter>
+    const {getByText, getByPlaceholderText, getByTestId, queryByText, debug, getAllByText } = render(<BrowserRouter>
                                 <App />
-                                </MemoryRouter>)
+                                </BrowserRouter>)
 
     fireEvent.change(getByPlaceholderText("name"), {
       target: { value: "Robbie" },

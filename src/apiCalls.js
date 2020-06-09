@@ -1,9 +1,6 @@
 require('dotenv').config()
 const catKey = process.env.REACT_APP_CAT_API_KEY;
 const apiKey = process.env.REACT_APP_API_KEY;
-console.log('apiKey', apiKey);
-console.log('catKey', catKey);
-
 
 export const catFacts = async () => {
   try {
@@ -68,7 +65,6 @@ export const getCoordinates = async (zipCode) => {
       throw new Error(`Problem received status code of ${result.status}`)
     }
     const response = await result.json()
-    console.log(response)
     return response.results
   } catch (error) {
     window.alert(`Server Error. It's not your fault the error is: ${error}`)

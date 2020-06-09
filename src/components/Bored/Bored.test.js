@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { BrowserRouter, MemoryRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import Bored from "./Bored";
 import { boredIdea } from '../../apiCalls.js'
 jest.mock('../../apiCalls.js')
@@ -30,7 +30,6 @@ describe("Bored", ()=>{
     </MemoryRouter>
   })
 
-  // afterEach(cleanup)
 
   it('should display the Bored page on render', ()=>{
 
@@ -51,9 +50,8 @@ describe("Bored", ()=>{
 
   it('can view a random bored idea when the component loads', async () => {
 
-    const { getByText, debug } = render(router)
+    const { getByText } = render(router)
     const idea = await waitFor(()=> getByText("Take a hike at a local park"))
-    debug()
     expect(idea).toBeInTheDocument()
   })
 

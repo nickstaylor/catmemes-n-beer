@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import IndBoredAdvice from "./IndBoredAdvice";
 
 
-
 describe("Individual Bored Activity", ()=>{
 
   let favoriteBoredActivity

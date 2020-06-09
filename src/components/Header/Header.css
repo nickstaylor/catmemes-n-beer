@@ -1,15 +1,13 @@
 header {
-    height: 50px;
-    display: flex;
-    /* justify-content: space-around; */
-    align-items: center;
-    width: 100%;
-    background-color: #7F9EEF;
-    border: 1px solid black;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #7F9EEF;
+  border: 1px solid black;
+}
 
-  }
-
-  .nav {
+.nav {
   margin-left: 3%;
   justify-content: space-around;
   font-size: 25px;
@@ -18,6 +16,7 @@ header {
   font-weight: normal;
   font-family: 'Roboto', sans-serif
 }
+
 .nav:visited {
   color: black;
 }
@@ -46,6 +45,7 @@ header {
   font-weight: bold;
   padding: 0 2%;
 }
+
 .header-username {
   margin-top: -1.1em;
 }

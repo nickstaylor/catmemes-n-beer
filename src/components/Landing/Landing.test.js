@@ -1,12 +1,8 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { BrowserRouter, MemoryRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import Landing from "./Landing";
-import MutationObserver from '@sheerun/mutationobserver-shim'
-window.MutationObserver = MutationObserver
-
-
 
 describe("Landing", () => {
   it("should render 4 topics on the page", () => {
@@ -41,4 +37,5 @@ describe("Landing", () => {
     fireEvent.click(button)
     expect(window.location.href).toBe("http://localhost/dadjokes");
   })
+  
 })

@@ -49,7 +49,6 @@ class App extends Component {
   componentDidMount = async () => {
     //cat facts fetch
     const catFactsApi = await catFacts();
-    console.log('catFactsApi', catFactsApi);
     let facts = catFactsApi.map(fact => {
       return {text: fact.text, upVotes: fact.upvotes, id: fact._id, voted: false}
     })
@@ -59,10 +58,8 @@ class App extends Component {
   }
 
   getCoordinatesFromZip = async (zipCode) => {
-    console.log(zipCode);
     //zipCode fetch
     let fetchedZipCode = await getCoordinates(zipCode)
-    console.log('zipCodeAPI', fetchedZipCode);
     if (fetchedZipCode.length){
       this.setState({coordinates: fetchedZipCode[0].geometry.location})
     } else {
@@ -74,14 +71,11 @@ class App extends Component {
   getBrewerySpots = async () => {
     let breweries
     if(this.state.zipCodeError){
-      console.log('zip error');
       let coordinates = {lat: "39.7541032", lng: "-105.0002242"}
       breweries = await getBreweries(coordinates)
     } else {
-      console.log('no zip error');
       breweries = await getBreweries(this.state.coordinates)
     }
-      console.log('breweriesAPI', breweries);
     let photo
     let breweryArray = []
     breweries.forEach(brewery => {

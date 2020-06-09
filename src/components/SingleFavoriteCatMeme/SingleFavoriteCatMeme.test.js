@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import SingleFavoriteCatMeme from "./SingleFavoriteCatMeme";
 
 
-
 describe("SingleFavoriteCatMeme", () => {
 
   let favoriteCatMeme

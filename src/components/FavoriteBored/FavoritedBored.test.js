@@ -4,8 +4,6 @@ import "@testing-library/jest-dom/extend-expect";
 import { BrowserRouter } from 'react-router-dom'
 import FavoriteBored from "./FavoriteBored";
 
-
-
 describe("FavoriteBored", ()=>{
 
   let favoriteBored
@@ -17,8 +15,8 @@ describe("FavoriteBored", ()=>{
     favoriteBored = [{activity: "Learn how to beatbox",id: 1591661095192},
                       {activity: "Contribute code or a monetary donation to an open-source software project",
                       id: 1591661098701},
-                    {activity: "Have a jam session with your friends", id: 1591661097533},
-                     {activity: "Conquer one of your fears", id: 1591661100157}]
+                      {activity: "Have a jam session with your friends", id: 1591661097533},
+                      {activity: "Conquer one of your fears", id: 1591661100157}]
 
     name = "favoriteBoredActivities"
     mockdeleteFavorite= jest.fn()

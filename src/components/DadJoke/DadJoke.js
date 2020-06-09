@@ -24,7 +24,6 @@ componentDidMount = () =>{
 getNewJoke = async () => {
   this.setState({loading: true})
   let randomDadjoke = await dadJoke()
-  console.log('randomDadjokeAPI', randomDadjoke);
   this.setState({setup: randomDadjoke.setup,
                 punchline: randomDadjoke.punchline,
                 getAnswer: false,

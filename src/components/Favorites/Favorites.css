@@ -1,18 +1,15 @@
-
 .favorites-container {
-background-image: linear-gradient(rgba(6, 18, 90, 0.2), rgba(14, 44, 99, 0.2)),
- url('../../images/Meow.jpg');
-/* background-repeat: no-repeat; */
-background-position: center center;
-/* background-attachment: fixed; */
-background-size: cover;
-display: flex;
-overflow-y:  auto;
-flex-direction: row;
-justify-content: space-evenly;
-flex-wrap: wrap;
-padding-bottom: 120px;
-height: 100vh
+  background-image: linear-gradient(rgba(6, 18, 90, 0.2), rgba(14, 44, 99, 0.2)),
+    url('../../images/Meow.jpg');
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-bottom: 120px;
+  height: 100vh
 }
 
 .favorites-box {
@@ -27,7 +24,6 @@ height: 100vh
   height: 150px;
   justify-content: space-evenly;
   margin: 15px;
-  /* width: 25%; */
 }
 
 .favorites-box p {
@@ -35,17 +31,18 @@ height: 100vh
   font-style: italic;
   margin-top: -2px
 }
+
 .topic-button {
   width: 90%;
   margin-top: -15px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    align-self: center;
-    cursor: pointer;
-    border: 2px solid #333333;
-    font-size: 1.2rem;
-    font-weight: bold;
-    opacity: .8;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-    color: #333333;
+  padding: 5px 20px;
+  border-radius: 5px;
+  align-self: center;
+  cursor: pointer;
+  border: 2px solid #333333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: .8;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  color: #333333;
 }
