@@ -8,7 +8,7 @@
 
  Then run ```npm start``` and open http://localhost:3000/ to see the site!
 
- To view tests:  In the terminal, run ```npm start``` to view testing suite.
+ To view tests:  In the terminal, run ```npm test``` to view testing suite.
 
  Login:  Enter your name and Zip Code.  No password needed
 <img width="1054" alt="Screen Shot 2020-06-09 at 3 51 05 PM" src="https://user-images.githubusercontent.com/44849120/84204778-0cb99b80-aa69-11ea-810f-906f2dae90da.png">
