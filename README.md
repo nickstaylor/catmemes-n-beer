@@ -8,18 +8,18 @@
 
  Then run ```npm start``` and open http://localhost:3000/ to see the site!
 
- To view tests:  In the terminal, run ```npm start``` to view testing suite.
+ To view tests:  In the terminal, run ```npm test``` to view testing suite.
 
- Login:
-
- Enter your name and Zip Code.  No password needed
- (login image here)
+ Login:  Enter your name and Zip Code.  No password needed
+<img width="1054" alt="Screen Shot 2020-06-09 at 3 51 05 PM" src="https://user-images.githubusercontent.com/44849120/84204778-0cb99b80-aa69-11ea-810f-906f2dae90da.png">
 
  ## Functionality
 
  Exhausted kitty-loving dads can relax by creating cat memes, laughing at random cheesy dad jokes, getting sage advice for those pesky bored kids, or pulling up a list of local breweries.  Dads can save their cat memes, the jokes and advice.  They can also favorite breweries.  The site keeps track of favorites in the favorites page.  Enjoy Dads!
 
-(screen shots of App)
+![Mod3FinalPart2](https://user-images.githubusercontent.com/44849120/84206666-ded65600-aa6c-11ea-805a-d48b02a529e5.gif)
+
+![Mod3FinalPart1](https://user-images.githubusercontent.com/44849120/84207151-e813f280-aa6d-11ea-9d2e-da1e34547952.gif)
 
 
  ### Technologies Used
