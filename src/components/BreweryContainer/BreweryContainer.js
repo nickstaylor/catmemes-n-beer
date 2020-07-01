@@ -4,7 +4,6 @@ import Brewery from '../Brewery/Brewery'
 import PropTypes from 'prop-types'
 
 const BreweryContainer  = (props) => {
-
     let zipCode
     if (props.zipCodeError){
       zipCode = '80202'
@@ -16,6 +15,8 @@ const BreweryContainer  = (props) => {
       props.favoriteBreweryIDs.forEach(id=>{
         if (brewery.id === id){
           brewery.favorite = true
+        } else {
+          brewery.favorite = false
         }
       })
       return <Brewery
