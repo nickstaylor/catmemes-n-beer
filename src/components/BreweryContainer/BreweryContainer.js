@@ -10,13 +10,11 @@ const BreweryContainer  = (props) => {
     } else {
       zipCode = props.zipCode
     }
-
     const breweries = props.breweries.map(brewery => {
+      brewery.favorite = null
       props.favoriteBreweryIDs.forEach(id=>{
-        if (brewery.id === id){
+        if (id === brewery.id){
           brewery.favorite = true
-        } else {
-          brewery.favorite = false
         }
       })
       return <Brewery
