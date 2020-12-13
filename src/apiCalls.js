@@ -1,5 +1,4 @@
 require('dotenv').config()
-const catKey = process.env.REACT_APP_CAT_API_KEY;
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export const catFacts = async () => {
@@ -9,7 +8,7 @@ export const catFacts = async () => {
     throw new Error(`Problem received status code of ${response.status}`)
   }
   const data = await response.json()
-  return data.all
+  return data
   } catch (error){
     window.alert(`Server Error. It's not your fault the error is: ${error}`)
   }
@@ -17,7 +16,7 @@ export const catFacts = async () => {
 
 export const catImages = async () => {
   try {
-  const response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=100&key=${catKey}&size=full`)
+  const response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=100&size=full`)
   if (!response.ok) {
     throw new Error(`Problem received status code of ${response.status}`)
   }
