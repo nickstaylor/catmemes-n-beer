@@ -10,7 +10,7 @@ const BreweryContainer  = (props) => {
     } else {
       zipCode = props.zipCode
     }
-    const breweries = props.breweries.map(brewery => {
+  const breweries = props.breweries.map((brewery, i) => {
       brewery.favorite = null
       props.favoriteBreweryIDs.forEach(id=>{
         if (id === brewery.id){
@@ -20,7 +20,7 @@ const BreweryContainer  = (props) => {
       return <Brewery
         brewery={brewery}
         id={brewery.id}
-        key={brewery.id}
+        key={i}
         toggleFavoriteBrewery={props.toggleFavoriteBrewery}
       />
     })
@@ -42,7 +42,7 @@ const BreweryContainer  = (props) => {
     favoriteBreweryIDs: PropTypes.array,
     breweries: PropTypes.array,
     zipCodeError: PropTypes.bool,
-    zipCode: PropTypes.number,
+    // zipCode: PropTypes.number,
     toggleFavoriteBrewery: PropTypes.func
   }
 

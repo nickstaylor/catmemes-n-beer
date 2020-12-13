@@ -24,7 +24,6 @@ class Brewery extends Component {
 
   favoriteThisListing = (event) => {
   let id = event.target.id;
-
   let imageName;
   this.state.isFavorited
     ? (imageName = "starOutline")
@@ -53,7 +52,7 @@ class Brewery extends Component {
       address,
       id
     } = this.props.brewery
-    const stars = [...Array(Math.round(rating))].map(i => <MdStar />)
+    const stars = [...Array(Math.round(rating))].map(i => <MdStar key={i} />)
 
   return (
     <section className="individual-brewery">
