@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Bored.css'
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { boredIdea } from "../../apiCalls.js"
 import PropTypes from 'prop-types'
 

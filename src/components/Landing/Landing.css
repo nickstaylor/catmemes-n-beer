@@ -4,6 +4,9 @@ background-image: linear-gradient(rgba(6, 18, 90, 0.2), rgba(14, 44, 99, 0.2)),
  url('../../images/Meow.jpg');
 background-position: center center;
 background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
 display: flex;
 justify-content: space-around;
 flex-wrap: wrap;

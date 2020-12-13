@@ -33,18 +33,25 @@ describe("App", () => {
       place_id: "ChIJwTF6RcN4bIcRWd8aCrbRvX0", types: ["postal_code"]}]
     await getCoordinates.mockResolvedValueOnce(sampleZipCodeApiData)
 
-    sampleBreweryApiData = [{
-      id: "87170c5a51a62f45f5361e357265b6089d8c4370",
-      name: "Wynkoop Brewing Company",
-      photos: [{height: 600,
-      photo_reference: "CmRaAAAAdcUrdM-aC5Q6GA1O_AkefrnjEwU4sUF8ou7-JdM32DmMc6vKjStoGIeTVxzMWMBmA4hyuZbbhFE1r51tSEY2tbCEkxWMoZ3yeaTmu3Ka9pnfndNXDLOvn6dBl7jGF7GtEhDadgJ0Rbw1HdlBe5uNebWUGhQbzp0qxjBHILeQvlK9GQpwBik3zA",
-      width: 900}],
-      place_id: "ChIJBadAhB95bIcR1h_loSGkaR0",
-      geometry:{location:{lat: 39.7397474,lng: -104.9454461}},
-      rating: 4.2,
-      reference: "ChIJBadAhB95bIcR1h_loSGkaR0",
-      vicinity: "1634 18th St, Denver"
-    }]
+    sampleBreweryApiData = [
+      {
+        id: "ChIJBadAhB95bIcR1h_loSGkaR0",
+        name: "Wynkoop Brewing Company",
+        photos: [
+          {
+            height: 600,
+            photo_reference:
+              "CmRaAAAAdcUrdM-aC5Q6GA1O_AkefrnjEwU4sUF8ou7-JdM32DmMc6vKjStoGIeTVxzMWMBmA4hyuZbbhFE1r51tSEY2tbCEkxWMoZ3yeaTmu3Ka9pnfndNXDLOvn6dBl7jGF7GtEhDadgJ0Rbw1HdlBe5uNebWUGhQbzp0qxjBHILeQvlK9GQpwBik3zA",
+            width: 900,
+          },
+        ],
+        place_id: "ChIJBadAhB95bIcR1h_loSGkaR0",
+        geometry: { location: { lat: 39.7397474, lng: -104.9454461 } },
+        rating: 4.2,
+        reference: "ChIJBadAhB95bIcR1h_loSGkaR0",
+        vicinity: "1634 18th St, Denver",
+      },
+    ];
 
     let sampleGetBreweryPhoto = "https://lh3.googleusercontent.com/p/AF1QipNu4SE4z4WPcSewxeiG5Zr70WEFUlHj5rhx5pa3=s1600-w500"
     await getBreweryPhotos.mockResolvedValueOnce(sampleGetBreweryPhoto)
@@ -113,7 +120,7 @@ describe("App", () => {
     });
 
     //the following goes to the cheesy dad joke page and shows a fetched dad joke
-    fireEvent.click(getByText("MEOW!"));
+    fireEvent.click(getByText("MEOW!"));``
     const button = getByTestId('Cheesy Dad Jokes!');
     fireEvent.click(button)
     const dadPage = await waitFor(() => getByText('Enjoy a Dad Joke! Tell Your Friends!'))
@@ -206,7 +213,7 @@ describe("App", () => {
     expect(breweryHeader).toBeInTheDocument();
     const brewery = await waitFor(() => getByText("1634 18th St, Denver"))
     expect(brewery).toBeInTheDocument()
-    fireEvent.click(getByTestId("87170c5a51a62f45f5361e357265b6089d8c4370"))
+    fireEvent.click(getByTestId("ChIJBadAhB95bIcR1h_loSGkaR0"));
     expect(getByText("Favorites (1)")).toBeInTheDocument()
     fireEvent.click(getByText("Home"))
     fireEvent.click(getByTestId("Bored Kids?"))
@@ -219,7 +226,7 @@ describe("App", () => {
     expect(getByText("Saved Bored Advice(1)")).toBeInTheDocument()
     fireEvent.click(getByText("Saved Breweries (1)"))
     expect(getAllByText("Wynkoop Brewing Company")).toHaveLength(2);
-    fireEvent.click(getByTestId("87170c5a51a62f45f5361e357265b6089d8c4370"))
+    fireEvent.click(getByTestId("ChIJBadAhB95bIcR1h_loSGkaR0"));
     expect(getByText("Favorites (1)")).toBeInTheDocument()
     expect(queryByText("1634 18th St, Denver")).not.toBeInTheDocument()
     fireEvent.click(getByText("Favorites (1)"))

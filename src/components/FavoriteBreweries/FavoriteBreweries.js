@@ -11,7 +11,7 @@ class FavoriteBreweries extends Component{
       favoriteBreweries: this.props.favoriteBreweries
     }
   }
-
+  
   updateFavoriteState = (id) => {
       let updatedFavorites = this.state.favoriteBreweries.filter((brewery) => {
         return brewery.id !== id;
